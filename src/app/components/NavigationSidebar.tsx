@@ -10,7 +10,8 @@ import {
   Activity,
   ArrowUpCircle,
   LogOut,
-  Radio
+  Radio,
+  X
 } from 'lucide-react';
 import { OptiMileLogo } from './OptiMileLogo';
 
@@ -26,9 +27,11 @@ interface NavigationSidebarProps {
   activeScreen: string;
   onNavigate: (screen: string) => void;
   onLogout: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function NavigationSidebar({ activeScreen, onNavigate, onLogout }: NavigationSidebarProps) {
+export function NavigationSidebar({ activeScreen, onNavigate, onLogout, isOpen = false, onClose }: NavigationSidebarProps) {
   const navigationItems: NavigationItem[] = [
     {
       id: 'dashboard',
@@ -88,13 +91,31 @@ export function NavigationSidebar({ activeScreen, onNavigate, onLogout }: Naviga
   ];
 
   return (
-    <aside className="w-64 bg-card border-r border-border flex flex-col h-screen sticky top-0 shadow-sm">
+    <>
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+      <aside
+        className={`w-64 bg-card border-r border-border flex flex-col h-screen fixed inset-y-0 left-0 z-50 shadow-sm transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:translate-x-0 lg:z-auto lg:shadow-sm ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
       {/* Brand Header */}
-      <div className="p-6 border-b border-border">
-        <div className="mb-4">
+      <div className="p-6 border-b border-border relative">
+        <button
+          onClick={onClose}
+          className="lg:hidden absolute top-4 right-4 p-1 rounded-lg text-muted-foreground hover:bg-accent"
+          aria-label="Close navigation menu"
+        >
+          <X className="w-5 h-5" />
+        </button>
+        <div className="mb-4 pr-8 lg:pr-0">
           <OptiMileLogo size="default" />
         </div>
-        
+
         {/* Role Badge */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 flex items-center gap-2">
           <Radio className="w-4 h-4 text-amber-600" />
@@ -103,7 +124,7 @@ export function NavigationSidebar({ activeScreen, onNavigate, onLogout }: Naviga
       </div>
 
       {/* Navigation Items */}
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-4 space-y-1 ">
         {navigationItems.map((item) => {
           const isActive = activeScreen === item.id;
           return (
@@ -145,6 +166,7 @@ export function NavigationSidebar({ activeScreen, onNavigate, onLogout }: Naviga
           <span className="text-sm">Log Out</span>
         </button>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }

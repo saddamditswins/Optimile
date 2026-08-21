@@ -153,7 +153,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
       {/* Header */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
         <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -183,8 +183,8 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
           
           {/* LAYER 0 — CONTEXT & SCOPE (Orientation) */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div>
                   <label className="text-xs text-slate-600 mb-1 block">Time Window</label>
                   <select
@@ -227,7 +227,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">SLA Health Signal</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               <div className="p-5 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs text-slate-600">Overall SLA Compliance</span>
@@ -264,7 +264,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">Risk Concentration</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {/* By Region */}
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">By Region</h3>
@@ -338,7 +338,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">Policy Stress Indicators</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">Escalations per Policy</h3>
                 <div className="space-y-2">
@@ -384,7 +384,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">VIP Risk Exposure</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">Current Status</h3>
                 <div className="space-y-3">
@@ -423,7 +423,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">Root Cause Patterns</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">Top Recurring Causes</h3>
                 <div className="space-y-2">
@@ -478,7 +478,7 @@ export function SLARiskOversight({ onBack }: SLARiskOversightProps) {
               <h2 className="text-slate-900 font-medium">Escalation Context</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-3">Escalation Volume Trend</div>
                 <div className="flex items-center gap-2 mb-2">

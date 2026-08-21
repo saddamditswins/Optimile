@@ -92,9 +92,9 @@ export function RouteDetailScreen({ routeId, onBack, onOpenMap }: RouteDetailScr
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
+        <div className="px-4 sm:px-6 py-4">
           {/* Top Row */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -135,7 +135,7 @@ export function RouteDetailScreen({ routeId, onBack, onOpenMap }: RouteDetailScr
           </div>
 
           {/* Context Indicators */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-slate-600" />
               <span className="text-slate-600">Wednesday, Dec 31, 2025</span>
@@ -153,13 +153,13 @@ export function RouteDetailScreen({ routeId, onBack, onOpenMap }: RouteDetailScr
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto">
           {/* Route Summary Panel */}
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6 p-6">
             <h2 className="text-slate-900 mb-4">Route Summary</h2>
-            
-            <div className="grid grid-cols-6 gap-6">
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
               {/* Driver */}
               <div>
                 <div className="flex items-center gap-2 text-slate-600 text-sm mb-2">

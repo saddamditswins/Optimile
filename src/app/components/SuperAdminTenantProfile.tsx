@@ -220,7 +220,7 @@ export function SuperAdminTenantProfile({ tenantId, onClose }: SuperAdminTenantP
                     {tenant.subscription.usage}
                   </span>
                   
-                  <div className="mt-3 grid grid-cols-3 gap-4">
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="p-3 bg-muted rounded-lg">
                       <p className="text-muted-foreground text-xs mb-1">Users</p>
                       <p className="text-foreground">{tenant.subscription.usageDetails.users}</p>

@@ -200,7 +200,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
       {/* Header */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
         <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -241,7 +241,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
           
           {/* LAYER 0 — CONTEXT & FILTERS */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="grid grid-cols-4 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-2 mb-1">
                   <Calendar className="w-4 h-4 text-slate-600" />
@@ -276,7 +276,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-slate-600" />
                 <span className="text-sm text-slate-700 font-medium">Filters:</span>
@@ -313,7 +313,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
           </div>
 
           {/* LAYER 1 — EXECUTION STATUS SUMMARY */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
               <div className="text-xs text-slate-600 mb-2">Total Active</div>
               <div className="text-3xl text-slate-900 font-medium">{activeCommits.length}</div>
@@ -356,9 +356,9 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
                 >
                   <div className="p-5">
                     {/* Header Row */}
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
                           <h3 className="text-slate-900 font-medium font-mono">{commit.commitId}</h3>
                           {getStatusBadge(commit.executionStatus)}
                           {getSeverityBadge(commit.severity)}
@@ -396,7 +396,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
                     </div>
 
                     {/* Metadata Grid - Aggregates Only */}
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                       <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Route className="w-4 h-4 text-slate-600" />
@@ -495,7 +495,7 @@ export function ExecutionOversight({ onBack }: ExecutionOversightProps) {
                           <AlertCircle className="w-5 h-5 text-slate-700 flex-shrink-0 mt-0.5" />
                           <div className="flex-1">
                             <div className="text-sm text-slate-900 font-medium mb-2">Requires Attention (Awareness Only)</div>
-                            <div className="grid grid-cols-3 gap-3 text-xs">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                               <div>
                                 <div className="text-slate-600 mb-1">Reason</div>
                                 <div className="text-slate-900">{commit.attentionReason}</div>

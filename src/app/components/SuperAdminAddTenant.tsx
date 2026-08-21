@@ -650,7 +650,7 @@ export function SuperAdminAddTenant({ onClose, onSubmit }: SuperAdminAddTenantPr
                     Business Details
                     <button onClick={() => setCurrentTab(0)} className="text-blue-600 hover:text-blue-800 text-sm">Edit</button>
                   </h3>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-muted-foreground">Company Name</p>
                       <p className="text-foreground">{formData.companyName || '-'}</p>
@@ -676,7 +676,7 @@ export function SuperAdminAddTenant({ onClose, onSubmit }: SuperAdminAddTenantPr
                     Location & Regional Settings
                     <button onClick={() => setCurrentTab(1)} className="text-blue-600 hover:text-blue-800 text-sm">Edit</button>
                   </h3>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-muted-foreground">Country</p>
                       <p className="text-foreground">{formData.country || '-'}</p>
@@ -702,7 +702,7 @@ export function SuperAdminAddTenant({ onClose, onSubmit }: SuperAdminAddTenantPr
                     Operational Scale
                     <button onClick={() => setCurrentTab(2)} className="text-blue-600 hover:text-blue-800 text-sm">Edit</button>
                   </h3>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-muted-foreground">Scale Indicator</p>
                       <p className="text-foreground">
@@ -724,7 +724,7 @@ export function SuperAdminAddTenant({ onClose, onSubmit }: SuperAdminAddTenantPr
                     Subscription & AI Access
                     <button onClick={() => setCurrentTab(3)} className="text-blue-600 hover:text-blue-800 text-sm">Edit</button>
                   </h3>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-muted-foreground">Subscription Plan</p>
                       <p className="text-foreground">{formData.selectedPlan}</p>
@@ -756,7 +756,7 @@ export function SuperAdminAddTenant({ onClose, onSubmit }: SuperAdminAddTenantPr
         </div>
 
         {/* Footer Actions */}
-        <div className="px-6 py-4 border-t border-border flex items-center justify-between bg-muted">
+        <div className="px-6 py-4 border-t border-border flex flex-wrap items-center justify-between gap-3 bg-muted">
           <button
             onClick={handlePrevious}
             disabled={currentTab === 0}

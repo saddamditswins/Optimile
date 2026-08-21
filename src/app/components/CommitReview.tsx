@@ -164,8 +164,8 @@ export function CommitReview({
     <div className="min-h-screen bg-slate-50">
       {/* Commit Warning Header */}
       <header className="bg-gradient-to-r from-red-600 to-red-700 border-b-4 border-red-900 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -188,7 +188,7 @@ export function CommitReview({
             </div>
 
             {/* Commit Info */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20">
                 <div className="text-xs text-red-100 mb-1">Recovery ID</div>
                 <div className="text-white font-mono text-sm">{commitData.recoveryId}</div>
@@ -229,7 +229,7 @@ export function CommitReview({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1400px] mx-auto space-y-6">
           {/* Recovery Summary */}
           <div className="bg-white rounded-lg border-2 border-red-400 shadow-sm p-6">
@@ -251,7 +251,7 @@ export function CommitReview({
                       <div className="flex-1">
                         <div className="font-medium text-slate-900 mb-2">{action.type}</div>
                         <p className="text-sm text-slate-700 mb-3">{action.description}</p>
-                        <div className="grid grid-cols-3 gap-4 p-3 bg-white border border-red-300 rounded">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-3 bg-white border border-red-300 rounded">
                           <div>
                             <div className="text-xs text-slate-600 mb-1">Source</div>
                             <div className="text-sm text-slate-900">{action.source}</div>
@@ -276,7 +276,7 @@ export function CommitReview({
             </div>
 
             {/* Impacted Entities */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Routes */}
               <div>
                 <h4 className="text-xs text-slate-700 font-medium mb-2 uppercase flex items-center gap-2">
@@ -349,7 +349,7 @@ export function CommitReview({
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded">
                   <div className="text-xs text-slate-600 mb-1">Snapshot ID</div>
@@ -409,7 +409,7 @@ export function CommitReview({
             {/* Policy Compliance */}
             <div className="mb-5">
               <h3 className="text-sm text-slate-700 font-medium mb-3">Policy Compliance Status</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {commitData.policyCompliance.checks.map((check, idx) => (
                   <div
                     key={idx}
@@ -443,13 +443,13 @@ export function CommitReview({
                 <div className="flex items-start gap-3">
                   <Lock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                   <div className="flex-1">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-y-1 mb-3">
                       <div className="text-amber-900 font-medium">Management Escalation Approval</div>
                       <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded border border-amber-400 uppercase">
                         {commitData.escalationApproval.status}
                       </span>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 text-sm mb-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-3">
                       <div>
                         <div className="text-xs text-amber-700 mb-1">Approver</div>
                         <div className="text-amber-900">{commitData.escalationApproval.approver}</div>
@@ -470,7 +470,7 @@ export function CommitReview({
             )}
 
             {/* Thresholds */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 bg-green-50 border border-green-300 rounded-lg">
                 <h4 className="text-sm text-slate-700 font-medium mb-3 flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-600" />
@@ -620,7 +620,7 @@ export function CommitReview({
                 placeholder="Provide a clear justification for this recovery decision. Explain why this action is necessary and appropriate given the circumstances..."
                 className="w-full h-32 p-4 border-2 border-slate-300 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
               />
-              <div className="flex items-center justify-between mt-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 mt-2">
                 <span className="text-xs text-slate-600">
                   This justification will be permanently recorded in the audit log.
                 </span>
@@ -637,7 +637,7 @@ export function CommitReview({
               <Eye className="w-5 h-5 text-blue-600" />
               <h3 className="text-blue-900 font-medium">Expected Outcome Summary</h3>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-3 bg-white rounded-lg">
                 <div className="text-xs text-slate-600 mb-1">Deliveries Saved</div>
                 <div className="text-xl text-green-700 font-medium">{commitData.impactSummary.deliveriesSaved}</div>
@@ -661,25 +661,25 @@ export function CommitReview({
 
       {/* Footer Controls */}
       <footer className="sticky bottom-0 bg-white border-t-4 border-red-600 shadow-2xl">
-        <div className="px-6 py-5">
+        <div className="px-4 sm:px-6 py-5">
           <div className="max-w-[1400px] mx-auto">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
               <div className="flex items-center gap-4">
                 <Lock className="w-6 h-6 text-red-600" />
                 <div>
                   <div className="text-sm text-slate-900 font-medium">Final Risk Gate</div>
                   <div className="text-xs text-slate-600">
-                    {canCommit 
-                      ? 'All requirements met - ready to commit' 
+                    {canCommit
+                      ? 'All requirements met - ready to commit'
                       : 'Complete all acknowledgments and justification to proceed'}
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={onBack}
-                  className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-400 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-slate-400 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Cancel & Return to Draft</span>
@@ -688,7 +688,7 @@ export function CommitReview({
                 <button
                   onClick={handleCommit}
                   disabled={!canCommit}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-lg transition-all text-lg ${
+                  className={`flex items-center justify-center gap-3 px-8 py-4 rounded-lg transition-all text-lg ${
                     canCommit
                       ? 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl border-2 border-red-800 cursor-pointer'
                       : 'bg-slate-200 text-slate-400 cursor-not-allowed border-2 border-slate-300'

@@ -68,15 +68,15 @@ export function TenantSettings({ onContinueSetup, setupMode = false }: TenantSet
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
               <h1 className="text-foreground">Tenant Settings</h1>
               <p className="text-muted-foreground text-sm">Configure your workspace and operational parameters</p>
             </div>
             {setupMode && (
-              <span className="px-3 py-1 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-sm">
+              <span className="px-3 py-1 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-sm self-start">
                 Setup Mode
               </span>
             )}
@@ -85,7 +85,7 @@ export function TenantSettings({ onContinueSetup, setupMode = false }: TenantSet
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Tabs Sidebar */}
@@ -131,7 +131,7 @@ export function TenantSettings({ onContinueSetup, setupMode = false }: TenantSet
 // Company Info Tab Component
 function CompanyInfoTab() {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-6">Company Information</h2>
       
       {/* Company Identity Section */}
@@ -261,7 +261,7 @@ function SubscriptionTab() {
   };
 
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-6">Subscription & Plan</h2>
       
       {/* Read-only notice */}
@@ -480,7 +480,7 @@ function SubscriptionTab() {
       </div>
 
       {/* Action Bar (Bottom) */}
-      <div className="flex items-center justify-between pt-6 border-t border-border">
+      <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 pt-6 border-t border-border">
         <button className="px-6 py-2.5 border border-border hover:bg-accent text-foreground rounded-lg transition-all duration-200">
           Back
         </button>
@@ -555,7 +555,7 @@ function RegionsTab({ onContinue }: { onContinue: () => void }) {
   };
 
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-6">Regions & Multi-Region Setup</h2>
 
       {/* SECTION 1: Primary Operating Region */}
@@ -847,7 +847,7 @@ function RegionsTab({ onContinue }: { onContinue: () => void }) {
       )}
 
       {/* Action Bar (Bottom) */}
-      <div className="flex items-center justify-between pt-6 border-t border-border">
+      <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 pt-6 border-t border-border">
         <button className="px-6 py-2.5 border border-border hover:bg-accent text-foreground rounded-lg transition-all duration-200">
           Back
         </button>
@@ -867,7 +867,7 @@ function RegionsTab({ onContinue }: { onContinue: () => void }) {
 // Placeholder components for other tabs
 function StructureTab({ onContinue }: { onContinue: () => void }) {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-4">Operational Structure</h2>
       <p className="text-muted-foreground mb-6">Configuration screen for depots and zones would go here.</p>
       <button 
@@ -883,7 +883,7 @@ function StructureTab({ onContinue }: { onContinue: () => void }) {
 
 function RolesTab({ onContinue }: { onContinue: () => void }) {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-4">Roles & Permissions</h2>
       <p className="text-muted-foreground mb-6">Configuration screen for roles and permissions would go here.</p>
       <button 
@@ -899,7 +899,7 @@ function RolesTab({ onContinue }: { onContinue: () => void }) {
 
 function SLATab({ onContinue }: { onContinue: () => void }) {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-4">SLA & Service Rules</h2>
       <p className="text-muted-foreground mb-6">Configuration screen for SLA rules would go here.</p>
       <button 
@@ -915,7 +915,7 @@ function SLATab({ onContinue }: { onContinue: () => void }) {
 
 function BrandingTab({ onContinue }: { onContinue: () => void }) {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-4">Theme & Branding</h2>
       <p className="text-muted-foreground mb-6">Configuration screen for branding would go here.</p>
       <button 
@@ -941,7 +941,7 @@ function ReadinessTab({ onActivate }: { onActivate: () => void }) {
   const hasPending = checklistItems.some(item => item.status === 'pending');
 
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border p-8">
+    <div className="bg-card rounded-lg shadow-sm border border-border p-4 sm:p-6 lg:p-8">
       <h2 className="text-foreground mb-6">Readiness Review & Activate Tenant</h2>
       
       {/* Checklist */}

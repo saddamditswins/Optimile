@@ -219,15 +219,15 @@ export function StopsExecutionList({ routeId }: StopsExecutionListProps) {
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm">
-      <div className="border-b border-slate-200 px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="border-b border-slate-200 px-4 sm:px-6 py-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h3 className="text-slate-900">Stops Execution</h3>
             <p className="text-slate-600 text-sm mt-0.5">
               All stops in execution sequence order
             </p>
           </div>
-          <div className="flex items-center gap-4 text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-600" />
               <span className="text-slate-600">11 Completed</span>
@@ -262,7 +262,7 @@ export function StopsExecutionList({ routeId }: StopsExecutionListProps) {
                   : ''
               }`}
             >
-              <div className="px-6 py-4">
+              <div className="px-4 sm:px-6 py-4">
                 <div className="flex items-start gap-4">
                   {/* Sequence Number */}
                   <div className="flex-shrink-0 w-12 pt-1">
@@ -305,7 +305,7 @@ export function StopsExecutionList({ routeId }: StopsExecutionListProps) {
                     </div>
 
                     {/* SLA Window and Risk Info */}
-                    <div className="flex items-center gap-4 mt-3">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-3">
                       <div className="flex items-center gap-2 text-sm">
                         <Clock className="w-4 h-4 text-slate-400" />
                         <span className="text-slate-600">

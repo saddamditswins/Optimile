@@ -8,9 +8,9 @@ export function TenantDashboard({ onNavigate }: TenantDashboardProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
               <h1 className="text-foreground">Tenant Dashboard</h1>
               <p className="text-muted-foreground text-sm">Acme Corporation · Last updated: Just now</p>
@@ -24,7 +24,7 @@ export function TenantDashboard({ onNavigate }: TenantDashboardProps) {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-7xl mx-auto space-y-6">
           {/* Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

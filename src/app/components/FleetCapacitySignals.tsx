@@ -54,7 +54,7 @@ export function FleetCapacitySignals() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border bg-card">
-        <div className="max-w-7xl mx-auto px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold text-foreground mb-1">Capacity & Constraint Signals</h1>
             <p className="text-sm text-muted-foreground">Monitor fleet supply readiness and detect capacity shortfalls</p>
@@ -62,7 +62,7 @@ export function FleetCapacitySignals() {
 
           {/* LAYER 0 - Context & Forecast Window */}
           <div className="bg-muted/30 border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <Info className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm font-medium text-foreground">Forecast Configuration</span>
@@ -73,7 +73,7 @@ export function FleetCapacitySignals() {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Time Window */}
               <div>
                 <label className="block text-xs text-muted-foreground mb-2">Time Window</label>
@@ -137,7 +137,7 @@ export function FleetCapacitySignals() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 py-6 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* LAYER 1 - Capacity vs Demand Snapshot */}
         <section>
           <div className="flex items-center gap-2 mb-4">
@@ -146,7 +146,7 @@ export function FleetCapacitySignals() {
             <span className="text-xs text-muted-foreground">(Aggregate signal)</span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Driver Capacity */}
             <div className="bg-card border border-border rounded-lg p-6">
               <div className="flex items-center gap-3 mb-6">
@@ -428,7 +428,7 @@ export function FleetCapacitySignals() {
             <p className="text-sm text-muted-foreground mb-4">
               Navigate to fleet management modules to investigate root causes
             </p>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <button
                 onClick={() => {
                   // Navigate to Drivers Management filtered by constraints

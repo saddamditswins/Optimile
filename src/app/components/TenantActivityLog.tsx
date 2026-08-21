@@ -167,10 +167,10 @@ export function TenantActivityLog() {
     <div className="flex flex-col h-screen bg-background">
       {/* Header */}
       <div className="border-b bg-card">
-        <div className="px-8 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-semibold text-foreground">Activity Log</h1>
+              <h1 className="text-xl sm:text-2xl font-semibold text-foreground">Activity Log</h1>
               <p className="text-sm text-muted-foreground mt-1">
                 Chronological record of administrative actions
               </p>
@@ -181,10 +181,10 @@ export function TenantActivityLog() {
 
       {/* Filters and Search */}
       <div className="border-b bg-card">
-        <div className="px-8 py-4">
+        <div className="px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap items-center gap-4">
             {/* Search */}
-            <div className="flex-1 min-w-[300px]">
+            <div className="w-full sm:flex-1 sm:min-w-[300px]">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
@@ -250,7 +250,7 @@ export function TenantActivityLog() {
 
       {/* Activity Log Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="px-8 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6">
           {Object.keys(groupedRecords).length === 0 ? (
             <div className="flex flex-col items-center justify-center py-16">
               <Clock className="w-12 h-12 text-muted-foreground mb-4" />
@@ -274,6 +274,8 @@ export function TenantActivityLog() {
 
                     {/* Activity Grid */}
                     <div className="bg-card border rounded-lg overflow-hidden">
+                      <div className="overflow-x-auto">
+                      <div className="min-w-[900px]">
                       {/* Table Header */}
                       <div className="grid grid-cols-[100px_150px_120px_180px_150px_1fr] gap-4 px-6 py-3 bg-muted/30 border-b text-xs font-medium text-muted-foreground">
                         <div>Time</div>
@@ -302,6 +304,8 @@ export function TenantActivityLog() {
                             <div className="text-muted-foreground">{record.description}</div>
                           </div>
                         ))}
+                      </div>
+                      </div>
                       </div>
                     </div>
                   </div>

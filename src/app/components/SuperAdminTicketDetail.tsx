@@ -132,8 +132,8 @@ export function SuperAdminTicketDetail({ ticketId, onClose, onNavigateToTenant }
               <div className="border border-border rounded-lg p-6">
                 <h3 className="text-foreground mb-4">Tenant Context</h3>
                 <p className="text-muted-foreground text-sm mb-4">Ensure decisions are context-aware</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="p-4 bg-muted rounded-lg">
                     <p className="text-muted-foreground text-sm mb-1">Tenant Name</p>
                     <p className="text-foreground">{ticket.tenantName}</p>

@@ -76,8 +76,8 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h1 className="text-foreground">Tenant Management</h1>
             <p className="text-muted-foreground text-sm">Platform-level tenant governance and lifecycle control</p>
@@ -92,11 +92,11 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
         </div>
       </header>
 
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          
+
           {/* SECTION 1 — KPI STRIP (CLICKABLE FILTERS) */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Total Tenants */}
             <button
               onClick={() => setSelectedKPI(null)}
@@ -186,7 +186,7 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
           {/* SECTION 2 — TENANT GRID */}
           <div className="bg-card rounded-lg shadow-sm border border-border">
             {/* Search and Filters Bar */}
-            <div className="p-4 border-b border-border flex items-center gap-4">
+            <div className="p-4 border-b border-border flex flex-col sm:flex-row sm:items-center gap-4">
               {/* Search */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -210,7 +210,7 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
               {/* Advanced Filters */}
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors"
               >
                 <Filter className="w-4 h-4" />
                 Advanced Filters
@@ -221,7 +221,7 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
             {/* Advanced Filters Panel */}
             {showFilters && (
               <div className="p-4 border-b border-border bg-muted">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   <div>
                     <label className="text-sm text-foreground mb-2 block">Status</label>
                     <select className="w-full px-3 py-2 border border-border rounded-lg bg-background">
@@ -429,7 +429,7 @@ export function SuperAdminTenantManagement({ onViewTenant, onAddTenant }: SuperA
 
             {/* Pagination */}
             {filteredTenants.length > 0 && (
-              <div className="p-4 border-t border-border flex items-center justify-between">
+              <div className="p-4 border-t border-border flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm text-muted-foreground">
                   Showing {filteredTenants.length} of {filteredTenants.length} tenants
                 </p>

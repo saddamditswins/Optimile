@@ -343,7 +343,7 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-card border-b">
-        <div className="px-8 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-purple-600 rounded-lg">
               <Star className="w-6 h-6 text-white fill-white" />
@@ -359,7 +359,7 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
       </header>
 
       {/* Main Content */}
-      <main className="px-8 py-6 max-w-7xl">
+      <main className="px-4 sm:px-6 lg:px-8 py-6 max-w-7xl">
         
         {/* SECTION A: VIPs NEEDING IMMEDIATE ACTION (PRIMARY) */}
         <div className="mb-8">
@@ -388,10 +388,10 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
                       : 'bg-amber-50 border-2 border-amber-300 hover:border-amber-400'
                   } rounded-lg p-5 cursor-pointer transition-all hover:shadow-md`}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                     <div className="flex-1">
                       {/* Delivery ID & Customer */}
-                      <div className="flex items-center gap-3 mb-2">
+                      <div className="flex items-center gap-3 mb-2 flex-wrap">
                         <div className="flex items-center gap-2">
                           {getPriorityIcon(delivery.priorityLevel)}
                           <span className="text-base font-semibold text-foreground">{delivery.deliveryId}</span>
@@ -414,7 +414,7 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
                       )}
                     </div>
 
-                    <div className="flex flex-col items-end gap-3">
+                    <div className="flex flex-col items-start sm:items-end gap-3">
                       {/* Time Display */}
                       {getTimeDisplay(delivery.timeToBreachMinutes)}
                       
@@ -435,7 +435,7 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
 
         {/* SECTION C: ORIENTATION KPIs (SUPPORTING) */}
         <div className="mb-8">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-card border rounded-lg p-4">
               <div className="flex items-center gap-3">
                 <Shield className="w-5 h-5 text-purple-600" />
@@ -481,7 +481,7 @@ export function VIPDeliveriesView({ onSelectDelivery }: VIPDeliveriesViewProps) 
                           <span className="text-slate-400">•</span>
                           <span className="text-sm text-foreground">{delivery.customerName}</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 flex-wrap">
                           {delivery.riskLevel === 'none' ? (
                             <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded">
                               <CheckCircle className="w-3 h-3" />

@@ -208,8 +208,8 @@ export function ExecutionDetail({
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-700 border-b-4 border-blue-800 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -229,7 +229,7 @@ export function ExecutionDetail({
             </div>
 
             {/* Commit Info */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20">
                 <div className="text-xs text-blue-100 mb-1">Commit ID</div>
                 <div className="text-white font-mono text-sm">{executionData.commitId}</div>
@@ -251,13 +251,13 @@ export function ExecutionDetail({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1400px] mx-auto space-y-6">
           {/* Execution Summary Panel */}
           <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm p-6">
             <h2 className="text-slate-900 mb-4">Execution Summary</h2>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <div className="text-sm text-slate-700 mb-3 font-medium">Recovery Description</div>
                 <p className="text-slate-900">{executionData.description}</p>
@@ -280,7 +280,7 @@ export function ExecutionDetail({
 
           {/* Execution Steps Timeline */}
           <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex flex-wrap items-center justify-between gap-y-1 mb-5">
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-slate-600" />
                 <h2 className="text-slate-900">Execution Steps Timeline</h2>
@@ -352,7 +352,7 @@ export function ExecutionDetail({
 
                     {/* Execution Metadata */}
                     {step.status !== 'pending' && (
-                      <div className="flex items-center gap-4 pt-3 border-t border-current/20 text-sm">
+                      <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-current/20 text-sm">
                         <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-current" />
                           <span className="text-slate-700">
@@ -379,7 +379,7 @@ export function ExecutionDetail({
                               <span className="text-sm font-medium text-slate-900">Driver Acknowledgment</span>
                               {getAcknowledgmentBadge(step.acknowledgment.status)}
                             </div>
-                            <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                               <div>
                                 <span className="text-slate-700">Notification sent:</span>
                                 <strong className="ml-1 text-slate-900">{step.acknowledgment.sentAt}</strong>
@@ -432,7 +432,7 @@ export function ExecutionDetail({
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
             <h2 className="text-slate-900 mb-4">Affected Entities</h2>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="flex items-center gap-2 mb-3">
                   <Route className="w-5 h-5 text-blue-600" />
@@ -533,8 +533,8 @@ export function ExecutionDetail({
 
       {/* Footer */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-slate-300 shadow-lg">
-        <div className="px-6 py-4">
-          <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-4">
               <Activity className="w-5 h-5 text-slate-600" />
               <div>

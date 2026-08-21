@@ -157,8 +157,8 @@ export function EscalationQueue({ onSelectEscalation }: EscalationQueueProps) {
           </div>
 
           {/* Bottom Row */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-2 gap-x-3">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <Clock className="w-4 h-4" />
                 <span>Wednesday, Dec 31, 2025</span>
@@ -173,7 +173,7 @@ export function EscalationQueue({ onSelectEscalation }: EscalationQueueProps) {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-xs text-green-600 font-medium">Live</span>
@@ -190,12 +190,12 @@ export function EscalationQueue({ onSelectEscalation }: EscalationQueueProps) {
       </header>
 
       {/* Main Content */}
-      <main className="px-8 py-6">
+      <main className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-[1600px] mx-auto space-y-6">
           {/* Filters & Controls */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4 text-slate-600" />
                   <span className="text-sm text-slate-700 font-medium">Filters:</span>
@@ -232,7 +232,7 @@ export function EscalationQueue({ onSelectEscalation }: EscalationQueueProps) {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
                   <ArrowUpDown className="w-4 h-4 text-slate-600" />
                   <span className="text-sm text-slate-700 font-medium">Sort by:</span>

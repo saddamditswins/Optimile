@@ -198,8 +198,8 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-slate-900">Execution Oversight</h1>
@@ -214,7 +214,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
             </div>
 
             {/* Context Indicators */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="text-xs text-slate-600 mb-1 flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
@@ -240,7 +240,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
           </div>
 
           {/* Summary Stats */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
               <div className="text-xs text-slate-600 mb-1">Total Active</div>
               <div className="text-2xl text-slate-900 font-medium">{activeCommits.length}</div>
@@ -268,12 +268,12 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto space-y-6">
           {/* Filters & Controls */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4 text-slate-600" />
                   <span className="text-sm text-slate-700 font-medium">Filters:</span>
@@ -311,7 +311,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2">
                   <ArrowUpDown className="w-4 h-4 text-slate-600" />
                   <span className="text-sm text-slate-700 font-medium">Sort by:</span>
@@ -359,9 +359,9 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
                 >
                   <div className="p-5">
                     {/* Header Row */}
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex items-center gap-3 mb-2 flex-wrap">
                           <h3 className="text-slate-900 font-medium font-mono">{commit.commitId}</h3>
                           {getStatusBadge(commit.executionStatus)}
                           {getSeverityBadge(commit.severity)}
@@ -370,7 +370,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
                         <div className="text-xs text-slate-600">Recovery ID: {commit.recoveryId}</div>
                       </div>
 
-                      <button className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-300">
+                      <button className="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-300">
                         <Eye className="w-4 h-4" />
                         <span className="text-sm">View Detail</span>
                       </button>
@@ -396,7 +396,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
                     </div>
 
                     {/* Metadata Grid */}
-                    <div className="grid grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                       <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Route className="w-4 h-4 text-blue-600" />
@@ -431,7 +431,7 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
                     </div>
 
                     {/* Footer Info */}
-                    <div className="flex items-center justify-between pt-3 border-t border-slate-200">
+                    <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-200">
                       <div className="text-xs text-slate-600">
                         Committed at <strong>{commit.committedAt}</strong>
                       </div>
@@ -452,8 +452,8 @@ export function ExecutionMonitor({ onViewExecutionDetail }: ExecutionMonitorProp
 
       {/* Footer */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-slate-300 shadow-lg">
-        <div className="px-6 py-3">
-          <div className="max-w-[1600px] mx-auto flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-3">
+          <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div className="flex items-center gap-3">
               <Layers className="w-5 h-5 text-slate-600" />
               <div>

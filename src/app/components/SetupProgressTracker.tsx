@@ -79,7 +79,7 @@ export function SetupProgressTracker({ currentStep, onContinueSetup, onSaveExit,
       {/* Header */}
       <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-sm">
                 <div className="w-6 h-6 border-2 border-white rounded" />
@@ -191,7 +191,7 @@ export function SetupProgressTracker({ currentStep, onContinueSetup, onSaveExit,
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <button
                     onClick={() => onContinueSetup(activeStep.id)}
                     disabled={activeStep.status === 'locked' || activeStep.status === 'completed'}
@@ -200,10 +200,10 @@ export function SetupProgressTracker({ currentStep, onContinueSetup, onSaveExit,
                     <span>Continue Setup</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
-                  
+
                   <button
                     onClick={onSaveExit}
-                    className="flex items-center gap-2 py-3 px-6 bg-card border border-border hover:bg-accent text-foreground rounded-lg transition-all duration-200"
+                    className="flex items-center justify-center gap-2 py-3 px-6 bg-card border border-border hover:bg-accent text-foreground rounded-lg transition-all duration-200"
                   >
                     <Save className="w-5 h-5" />
                     <span>Save & Exit</span>

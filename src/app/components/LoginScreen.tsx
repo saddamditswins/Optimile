@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { OptiMileLogo } from './OptiMileLogo';
-import { ThemeDropdown } from './ThemeDropdown';
+import { ThemeToggle } from './ThemeToggle';
 import { Eye, EyeOff, Shield, Lock, ChevronLeft } from 'lucide-react';
 
 interface LoginScreenProps {
@@ -296,13 +296,13 @@ export function LoginScreen({ roleId, onBack, onLoginSuccess }: LoginScreenProps
       {/* RIGHT PANEL - Login Form (60%) */}
       <div className="w-full lg:w-[60%] bg-white dark:bg-gray-900 flex flex-col">
         {/* Header with logo and theme dropdown */}
-        <header className="border-b border-gray-200 dark:border-gray-700 px-8 py-6 flex items-center justify-between">
+        <header className="border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
           <OptiMileLogo size="default" />
-          <ThemeDropdown />
+          <ThemeToggle />
         </header>
 
         {/* Main login form */}
-        <main className="flex-1 flex items-center justify-center px-8 py-12">
+        <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
           <div className="w-full max-w-md">
             {/* Welcome header */}
             <div className="mb-8">
@@ -452,7 +452,7 @@ export function LoginScreen({ roleId, onBack, onLoginSuccess }: LoginScreenProps
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-gray-200 dark:border-gray-700 px-8 py-4">
+        <footer className="border-t border-gray-200 dark:border-gray-700 px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-center text-xs text-gray-500 dark:text-gray-400">
             © 2025 OptiMile. All rights reserved. Unauthorized access is prohibited.
           </p>

@@ -20,7 +20,7 @@ export function FirstLoginLanding({ onStartSetup, onSetupComplete, onSetupStepCh
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-sm">
               <div className="w-6 h-6 border-2 border-white rounded" />
@@ -30,8 +30,8 @@ export function FirstLoginLanding({ onStartSetup, onSetupComplete, onSetupStepCh
               <p className="text-muted-foreground text-xs">Execution Control Platform</p>
             </div>
           </div>
-          
-          <div className="flex items-center gap-2">
+
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="text-sm text-muted-foreground">Acme Corporation</span>
             <span className="px-3 py-1 bg-amber-50 border border-amber-200 rounded-lg text-amber-900 text-sm">
               Tenant Setup Required
@@ -44,7 +44,7 @@ export function FirstLoginLanding({ onStartSetup, onSetupComplete, onSetupStepCh
       <main className="flex-1 flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-2xl">
           {/* Main Card */}
-          <div className="bg-card rounded-lg shadow-lg border border-border p-8">
+          <div className="bg-card rounded-lg shadow-lg border border-border p-6 sm:p-8">
             {/* Icon */}
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center">

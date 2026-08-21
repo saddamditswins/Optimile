@@ -8,18 +8,18 @@ export function SuperAdminContactOverview({ onViewTickets }: SuperAdminContactOv
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-foreground">Contact & Support</h1>
           <p className="text-muted-foreground text-sm">Platform-level visibility into tenant-raised tickets</p>
         </div>
       </header>
 
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          
+
           {/* SECTION 1 — KPI STRIP */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Open Tickets */}
             <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
@@ -191,7 +191,7 @@ export function SuperAdminContactOverview({ onViewTickets }: SuperAdminContactOv
 
           {/* Quick Actions */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <h2 className="text-foreground mb-1">Ticket Management</h2>
                 <p className="text-muted-foreground text-sm">View and manage all tenant-raised tickets</p>

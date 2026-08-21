@@ -58,19 +58,19 @@ export function SuperAdminSettings() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-foreground">Settings</h1>
           <p className="text-muted-foreground text-sm">Personal account and platform configuration</p>
         </div>
       </header>
 
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-6">
-            
+          <div className="flex flex-col lg:flex-row gap-6">
+
             {/* Left Sidebar Navigation */}
-            <div className="w-64 flex-shrink-0">
+            <div className="w-full lg:w-64 flex-shrink-0">
               <div className="bg-card rounded-lg shadow-sm border border-border overflow-hidden">
                 
                 {/* My Account Section */}
@@ -243,7 +243,7 @@ export function SuperAdminSettings() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm text-foreground mb-2">Account Status</label>
                         <div className="px-3 py-2 border border-border rounded-lg bg-muted">
@@ -281,7 +281,7 @@ export function SuperAdminSettings() {
 
                   <div className="space-y-6">
                     <div className="border border-border rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                         <div>
                           <h3 className="text-foreground mb-1">Password</h3>
                           <p className="text-muted-foreground text-sm">Change your account password</p>
@@ -322,7 +322,7 @@ export function SuperAdminSettings() {
                     </div>
 
                     <div className="border border-border rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                         <div>
                           <h3 className="text-foreground mb-1">Active Sessions</h3>
                           <p className="text-muted-foreground text-sm">View and manage your active sessions</p>
@@ -334,7 +334,7 @@ export function SuperAdminSettings() {
                     </div>
 
                     <div className="border border-border rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                         <div>
                           <h3 className="text-foreground mb-1">Logout from Other Sessions</h3>
                           <p className="text-muted-foreground text-sm">End all other active sessions</p>
@@ -363,7 +363,7 @@ export function SuperAdminSettings() {
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm text-foreground mb-3">Theme</label>
-                      <div className="grid grid-cols-3 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button
                           onClick={() => setTheme('light')}
                           className={`p-4 border rounded-lg transition-all ${
@@ -402,7 +402,7 @@ export function SuperAdminSettings() {
 
                     <div>
                       <label className="block text-sm text-foreground mb-3">UI Density</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <button
                           onClick={() => setDensity('comfortable')}
                           className={`p-4 border rounded-lg text-left transition-all ${
@@ -513,7 +513,7 @@ export function SuperAdminSettings() {
 
                     <div>
                       <label className="block text-sm text-foreground mb-3">Severity Preference</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <button
                           onClick={() => setSeverityPreference('critical')}
                           className={`p-4 border rounded-lg text-left transition-all ${
@@ -575,7 +575,7 @@ export function SuperAdminSettings() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm text-foreground mb-2">Platform Logo (Light Theme)</label>
                         <div className="border-2 border-dashed border-border rounded-lg p-6 hover:border-blue-400 transition-colors cursor-pointer">
@@ -757,7 +757,7 @@ export function SuperAdminSettings() {
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm text-foreground mb-3">Default Theme for New Users</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <button
                           onClick={() => setDefaultTheme('light')}
                           className={`p-4 border rounded-lg text-left transition-all ${

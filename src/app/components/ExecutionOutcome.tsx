@@ -158,8 +158,8 @@ export function ExecutionOutcome({
         outcomeData.finalOutcome === 'partial' ? 'from-amber-600 to-amber-700 border-amber-900' :
         'from-red-600 to-red-700 border-red-900'
       } border-b-4 sticky top-0 z-10`}>
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -183,7 +183,7 @@ export function ExecutionOutcome({
             </div>
 
             {/* Recovery Metadata */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20">
                 <div className="text-xs text-white/80 mb-1">Recovery ID</div>
                 <div className="text-white font-mono text-sm">{outcomeData.recoveryId}</div>
@@ -205,7 +205,7 @@ export function ExecutionOutcome({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-8">
+      <main className="px-4 sm:px-6 py-8">
         <div className="max-w-[1200px] mx-auto space-y-6">
           {/* Outcome Summary Header */}
           <div className={`bg-gradient-to-br rounded-lg border-2 shadow-lg p-6 ${
@@ -224,7 +224,7 @@ export function ExecutionOutcome({
               <h2 className="text-slate-900">Final Execution Outcome</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-white rounded-lg border border-slate-300">
                 <div className="text-xs text-slate-600 mb-1">Committed At</div>
                 <div className="text-sm text-slate-900">{outcomeData.committedAt}</div>
@@ -246,7 +246,7 @@ export function ExecutionOutcome({
 
             {/* SLA Result */}
             <div className="mb-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-slate-600" />
                   <h3 className="text-slate-900 font-medium">SLA Result</h3>
@@ -267,7 +267,7 @@ export function ExecutionOutcome({
                   {outcomeData.slaResult.details}
                 </p>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="p-3 bg-white rounded">
                     <div className="text-xs text-slate-600 mb-1">Targeted</div>
                     <div className="text-lg text-slate-900 font-medium">{outcomeData.slaResult.deliveriesTargeted}</div>
@@ -301,7 +301,7 @@ export function ExecutionOutcome({
                 </div>
 
                 <div className="p-5 bg-blue-50 rounded-lg border-2 border-blue-300">
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="p-3 bg-white rounded">
                       <div className="text-xs text-slate-600 mb-1">Penalties Avoided</div>
                       <div className="text-lg text-green-700 font-medium">{outcomeData.costImpact.penaltiesAvoided}</div>
@@ -326,7 +326,7 @@ export function ExecutionOutcome({
                 <h3 className="text-slate-900 font-medium">Execution Statistics</h3>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                   <div className="text-sm text-slate-700 mb-2">Execution Steps</div>
                   <div className="flex items-center gap-2">
@@ -461,7 +461,7 @@ export function ExecutionOutcome({
               <h2 className="text-slate-900">Audit & Record Links</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <button
                 onClick={onViewEvidenceSnapshot}
                 className="flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 border border-blue-300 rounded-lg transition-colors"
@@ -526,25 +526,25 @@ export function ExecutionOutcome({
 
       {/* Footer Controls */}
       <footer className="sticky bottom-0 bg-white border-t-4 border-slate-600 shadow-2xl">
-        <div className="px-6 py-5">
+        <div className="px-4 sm:px-6 py-5">
           <div className="max-w-[1200px] mx-auto">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="flex items-center gap-4">
                 <Lock className="w-6 h-6 text-slate-600" />
                 <div>
                   <div className="text-sm text-slate-900 font-medium">Final Recovery Closure</div>
                   <div className="text-xs text-slate-600">
-                    {canClose 
-                      ? 'Ready to close and finalize recovery record' 
+                    {canClose
+                      ? 'Ready to close and finalize recovery record'
                       : 'Select closure reason to proceed'}
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={onBack}
-                  className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-400 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-slate-400 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Back</span>
@@ -553,7 +553,7 @@ export function ExecutionOutcome({
                 <button
                   onClick={handleClose}
                   disabled={!canClose}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-lg transition-all text-lg ${
+                  className={`flex items-center justify-center gap-3 px-8 py-4 rounded-lg transition-all text-lg ${
                     canClose
                       ? 'bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white shadow-xl border-2 border-slate-900 cursor-pointer'
                       : 'bg-slate-200 text-slate-400 cursor-not-allowed border-2 border-slate-300'

@@ -168,8 +168,8 @@ export function FleetDriversManagement() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border bg-card">
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
             <div>
               <h1 className="text-2xl font-semibold text-foreground mb-1">Drivers Management</h1>
               <p className="text-sm text-muted-foreground">Manage driver records, compliance, and availability intent</p>
@@ -184,7 +184,7 @@ export function FleetDriversManagement() {
           </div>
 
           {/* Search and Filters */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <input
@@ -195,7 +195,7 @@ export function FleetDriversManagement() {
                 className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={() => setFilterState('all')}
                 className={`px-3 py-2 rounded-lg text-sm transition-colors ${
@@ -252,7 +252,7 @@ export function FleetDriversManagement() {
       </div>
 
       {/* Driver List */}
-      <div className="max-w-7xl mx-auto px-8 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="space-y-3">
           {filteredDrivers.map((driver) => {
             const StateIcon = getStateIcon(driver.driverState);
@@ -262,9 +262,9 @@ export function FleetDriversManagement() {
                 onClick={() => setSelectedDriver(driver)}
                 className="w-full bg-card border border-border rounded-lg p-5 hover:border-blue-200 hover:bg-blue-50/30 transition-all text-left"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
                       <h3 className="font-medium text-foreground">{driver.name}</h3>
                       <span className="text-sm text-muted-foreground">{driver.employeeId}</span>
                       <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium ${getStateColor(driver.driverState)}`}>
@@ -278,7 +278,7 @@ export function FleetDriversManagement() {
                         </div>
                       )}
                     </div>
-                    <div className="grid grid-cols-4 gap-6 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 text-sm">
                       <div>
                         <p className="text-muted-foreground mb-0.5">Region / Hub</p>
                         <p className="text-foreground">{driver.region} · {driver.hub}</p>
@@ -393,7 +393,7 @@ function CreateDriverModal({ onClose, onSave }: { onClose: () => void; onSave: (
           {/* Personal Details */}
           <div>
             <h3 className="text-sm font-medium text-foreground mb-3">Personal Details</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-muted-foreground mb-1.5">Full Name *</label>
                 <input
@@ -422,7 +422,7 @@ function CreateDriverModal({ onClose, onSave }: { onClose: () => void; onSave: (
           {/* Location Assignment */}
           <div>
             <h3 className="text-sm font-medium text-foreground mb-3">Location Assignment</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-muted-foreground mb-1.5">Region *</label>
                 <select
@@ -458,7 +458,7 @@ function CreateDriverModal({ onClose, onSave }: { onClose: () => void; onSave: (
           {/* License Details */}
           <div>
             <h3 className="text-sm font-medium text-foreground mb-3">License Details</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-muted-foreground mb-1.5">License Type *</label>
                 <select
@@ -489,7 +489,7 @@ function CreateDriverModal({ onClose, onSave }: { onClose: () => void; onSave: (
           {/* Certifications */}
           <div>
             <h3 className="text-sm font-medium text-foreground mb-3">Certifications (Optional)</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {['Hazmat', 'Tanker', 'Doubles/Triples', 'Passenger'].map((cert) => (
                 <label key={cert} className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -511,7 +511,7 @@ function CreateDriverModal({ onClose, onSave }: { onClose: () => void; onSave: (
           </div>
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-border">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-4 border-t border-border">
             <p className="text-sm text-muted-foreground">Driver state will be: <span className="font-medium text-gray-700">CREATED</span></p>
             <div className="flex items-center gap-3">
               <button
@@ -585,7 +585,7 @@ function DriverDetailView({
               <User className="w-4 h-4 text-muted-foreground" />
               <h3 className="font-medium text-foreground">Identity Information</h3>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Employee ID</p>
                 <p className="text-sm text-foreground">{driver.employeeId}</p>
@@ -603,7 +603,7 @@ function DriverDetailView({
 
           {/* Compliance Validation (READ-ONLY) */}
           <section className="border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4 text-muted-foreground" />
                 <h3 className="font-medium text-foreground">Compliance Validation</h3>
@@ -620,8 +620,8 @@ function DriverDetailView({
                 {driver.complianceStatus}
               </div>
             </div>
-            
-            <div className="grid grid-cols-2 gap-4 mb-4">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div className="bg-muted/30 rounded-lg p-3">
                 <p className="text-sm text-muted-foreground mb-1">License Type</p>
                 <p className="text-sm text-foreground font-medium">{driver.licenseType}</p>
@@ -668,7 +668,7 @@ function DriverDetailView({
 
           {/* Availability Declaration (INTENT ONLY) */}
           <section className="border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-muted-foreground" />
                 <h3 className="font-medium text-foreground">Availability Declaration</h3>
@@ -703,7 +703,7 @@ function DriverDetailView({
 
           {/* HOS / Fatigue Check (SYSTEM-COMPUTED) */}
           <section className="border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-muted-foreground" />
                 <h3 className="font-medium text-foreground">HOS / Fatigue Check</h3>
@@ -721,7 +721,7 @@ function DriverDetailView({
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
               <div className="bg-muted/30 rounded-lg p-3">
                 <p className="text-sm text-muted-foreground mb-1">Hours Remaining</p>
                 <p className="text-lg text-foreground font-semibold">
@@ -765,7 +765,7 @@ function DriverDetailView({
             </div>
 
             <div className="bg-white rounded-lg p-4 mb-3">
-              <div className="grid grid-cols-4 gap-4 mb-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                 <div className="text-center">
                   <p className="text-xs text-muted-foreground mb-2">Compliance</p>
                   <div className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-medium ${

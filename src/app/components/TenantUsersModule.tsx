@@ -142,8 +142,8 @@ export function TenantUsersModule({ setupMode = false, onFirstUserAdded, onFirst
   return (
     <div className="flex-1 bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h1 className="text-foreground mb-1">Users</h1>
             <p className="text-muted-foreground text-sm">
@@ -152,7 +152,7 @@ export function TenantUsersModule({ setupMode = false, onFirstUserAdded, onFirst
           </div>
           <button
             onClick={() => setShowAddUserDialog(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
+            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm hover:shadow-md self-start sm:self-auto"
           >
             <Plus className="w-4 h-4" />
             Add User
@@ -161,7 +161,7 @@ export function TenantUsersModule({ setupMode = false, onFirstUserAdded, onFirst
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-7xl mx-auto">
           {/* Setup mode banner */}
           {setupMode && users.length === 1 && (
@@ -195,6 +195,7 @@ export function TenantUsersModule({ setupMode = false, onFirstUserAdded, onFirst
 
           {/* Users Table */}
           <div className="bg-card rounded-lg shadow-sm border border-border overflow-hidden">
+            <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-muted border-b border-border">
                 <tr>
@@ -263,6 +264,7 @@ export function TenantUsersModule({ setupMode = false, onFirstUserAdded, onFirst
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </main>

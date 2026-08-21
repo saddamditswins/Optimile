@@ -1,13 +1,15 @@
-import { LayoutDashboard, Building2, CreditCard, Headphones, Settings, LogOut, Shield } from 'lucide-react';
+import { LayoutDashboard, Building2, CreditCard, Headphones, Settings, LogOut, Shield, X } from 'lucide-react';
 import { OptiMileLogo } from './OptiMileLogo';
 
 interface SuperAdminSidebarProps {
   activeScreen: string;
   onNavigate: (screen: string) => void;
   onLogout: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function SuperAdminSidebar({ activeScreen, onNavigate, onLogout }: SuperAdminSidebarProps) {
+export function SuperAdminSidebar({ activeScreen, onNavigate, onLogout, isOpen = false, onClose }: SuperAdminSidebarProps) {
   const navItems = [
     { id: 'superadmin-dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'superadmin-tenants', label: 'Tenants', icon: Building2 },
@@ -17,10 +19,21 @@ export function SuperAdminSidebar({ activeScreen, onNavigate, onLogout }: SuperA
   ];
 
   return (
-    <div className="w-64 bg-card border-r border-border flex flex-col h-full">
+    <>
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/40 z-40 lg:hidden" onClick={onClose} />
+      )}
+      <div
+        className={`w-64 bg-card border-r border-border flex flex-col h-screen fixed inset-y-0 left-0 z-50 shadow-sm transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:translate-x-0 lg:z-auto lg:h-full ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
       {/* Logo & Role */}
-      <div className="p-6 border-b border-border">
-        <div className="mb-4">
+      <div className="p-6 border-b border-border relative">
+        <button onClick={onClose} className="lg:hidden absolute top-4 right-4 p-1 rounded-lg text-muted-foreground hover:bg-accent" aria-label="Close navigation menu">
+          <X className="w-5 h-5" />
+        </button>
+        <div className="mb-4 pr-8 lg:pr-0">
           <OptiMileLogo size="default" />
         </div>
         <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 border border-blue-200 rounded-lg">
@@ -68,6 +81,7 @@ export function SuperAdminSidebar({ activeScreen, onNavigate, onLogout }: SuperA
           <span>Logout</span>
         </button>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

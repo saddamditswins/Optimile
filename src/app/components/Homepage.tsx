@@ -14,7 +14,7 @@ import {
   Users,
 } from 'lucide-react';
 import { OptiMileLogo } from './OptiMileLogo';
-import { ThemeDropdown } from './ThemeDropdown';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HomepageProps {
   onGetStarted: () => void;
@@ -230,8 +230,10 @@ export function Homepage({ onGetStarted }: HomepageProps) {
 
       {/* Nav */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <OptiMileLogo size="default" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
+          <div className="min-w-0 shrink">
+            <OptiMileLogo size="default" />
+          </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#capabilities" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
               Capabilities
@@ -243,17 +245,15 @@ export function Homepage({ onGetStarted }: HomepageProps) {
               Roles
             </a>
           </nav>
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:block">
-              <ThemeDropdown />
-            </div>
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={onGetStarted}
-              className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap"
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
             </button>
+            <ThemeToggle />
           </div>
         </div>
       </header>

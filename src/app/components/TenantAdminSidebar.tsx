@@ -7,7 +7,8 @@ import {
   LogOut,
   Lock,
   AlertCircle,
-  ScrollText
+  ScrollText,
+  X
 } from 'lucide-react';
 import { OptiMileLogo } from './OptiMileLogo';
 
@@ -24,13 +25,17 @@ interface TenantAdminSidebarProps {
   onNavigate: (screen: string) => void;
   onLogout: () => void;
   workspaceReady: boolean;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function TenantAdminSidebar({ 
-  activeScreen, 
-  onNavigate, 
-  onLogout, 
-  workspaceReady
+export function TenantAdminSidebar({
+  activeScreen,
+  onNavigate,
+  onLogout,
+  workspaceReady,
+  isOpen = false,
+  onClose
 }: TenantAdminSidebarProps) {
   const tenantName = "ACME Corporation";
   
@@ -69,13 +74,24 @@ export function TenantAdminSidebar({
   ];
 
   return (
-    <aside className="w-64 bg-card border-r border-border flex flex-col h-screen sticky top-0 shadow-sm">
+    <>
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/40 z-40 lg:hidden" onClick={onClose} />
+      )}
+      <aside
+        className={`w-64 bg-card border-r border-border flex flex-col h-screen fixed inset-y-0 left-0 z-50 shadow-sm transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:translate-x-0 lg:z-auto ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
       {/* Brand Header */}
-      <div className="p-6 border-b border-border">
-        <div className="mb-4">
+      <div className="p-6 border-b border-border relative">
+        <button onClick={onClose} className="lg:hidden absolute top-4 right-4 p-1 rounded-lg text-muted-foreground hover:bg-accent" aria-label="Close navigation menu">
+          <X className="w-5 h-5" />
+        </button>
+        <div className="mb-4 pr-8 lg:pr-0">
           <OptiMileLogo size="default" />
         </div>
-        
+
         {/* Tenant Name and Status */}
         <div className="space-y-2">
           <div className="text-xs text-muted-foreground">
@@ -97,7 +113,7 @@ export function TenantAdminSidebar({
       </div>
 
       {/* Navigation Items */}
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-4 space-y-1 ">
         {navigationItems.map((item) => {
           const isActive = activeScreen === item.id || activeScreen.startsWith(item.id);
           const isLocked = !workspaceReady && item.lockedUntilReady;
@@ -158,6 +174,7 @@ export function TenantAdminSidebar({
           <span className="text-sm">Log Out</span>
         </button>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }

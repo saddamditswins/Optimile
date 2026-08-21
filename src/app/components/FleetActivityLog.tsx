@@ -191,7 +191,7 @@ export function FleetActivityLog() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border bg-card">
-        <div className="max-w-[1600px] mx-auto px-8 py-6">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-1">
               <h1 className="text-2xl font-semibold text-foreground">Fleet Activity Log</h1>
@@ -210,7 +210,7 @@ export function FleetActivityLog() {
               <span className="text-sm font-medium text-foreground">Record Scope</span>
             </div>
 
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
               {/* Date Range */}
               <div>
                 <label className="block text-xs text-muted-foreground mb-2">Date From</label>
@@ -295,7 +295,7 @@ export function FleetActivityLog() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Database className="w-3.5 h-3.5" />
                 <span>These records are system-generated and cannot be modified.</span>
@@ -321,11 +321,11 @@ export function FleetActivityLog() {
         </div>
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-8 py-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Activity Ledger Table */}
-        <div className="bg-card border border-border rounded-lg overflow-hidden">
+        <div className="bg-card border border-border rounded-lg overflow-hidden overflow-x-auto">
           {/* Table Header */}
-          <div className="border-b border-border bg-muted/30">
+          <div className="border-b border-border bg-muted/30 min-w-[960px]">
             <div className="grid grid-cols-12 gap-4 px-4 py-3 text-xs font-medium text-muted-foreground">
               <div className="col-span-2">Timestamp (UTC)</div>
               <div className="col-span-1">Entity Type</div>
@@ -340,7 +340,7 @@ export function FleetActivityLog() {
           </div>
 
           {/* Table Body */}
-          <div className="divide-y divide-border">
+          <div className="divide-y divide-border min-w-[960px]">
             {filteredRecords.length > 0 ? (
               filteredRecords.map((record) => (
                 <button
@@ -397,7 +397,7 @@ export function FleetActivityLog() {
         </div>
 
         {/* Record Count */}
-        <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+        <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-xs text-muted-foreground">
           <span>Displaying {filteredRecords.length} of {activityRecords.length} total records</span>
           <span>Records retention: 7 years per regulatory requirements</span>
         </div>
@@ -452,7 +452,7 @@ export function FleetActivityLog() {
               </div>
 
               {/* Entity Metadata */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-2">Entity Type</label>
                   <p className="text-sm text-foreground">
@@ -477,7 +477,7 @@ export function FleetActivityLog() {
               </div>
 
               {/* Before/After Values */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-2">Previous Value</label>
                   <p className="text-sm text-foreground bg-red-50 border border-red-200 px-3 py-2 rounded">
@@ -493,7 +493,7 @@ export function FleetActivityLog() {
               </div>
 
               {/* User & Source */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-2">Changed By</label>
                   <p className="text-sm text-foreground">{selectedRecord.changedBy}</p>
@@ -504,7 +504,7 @@ export function FleetActivityLog() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-2">Change Source</label>
                   <p className="text-sm text-foreground capitalize">{selectedRecord.source}</p>

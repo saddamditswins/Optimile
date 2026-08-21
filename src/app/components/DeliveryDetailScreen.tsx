@@ -201,8 +201,8 @@ export function DeliveryDetailScreen({
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -233,16 +233,16 @@ export function DeliveryDetailScreen({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Main Info */}
-            <div className="col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-6">
               {/* Delivery Summary Panel */}
               <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6">
                 <h2 className="text-slate-900 mb-4">Delivery Summary</h2>
-                
-                <div className="grid grid-cols-2 gap-6">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <div className="space-y-4">
                       <div>
@@ -303,7 +303,7 @@ export function DeliveryDetailScreen({
                 
                 <div className="space-y-4">
                   {/* Route & Driver */}
-                  <div className="grid grid-cols-2 gap-6 pb-4 border-b border-slate-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-4 border-b border-slate-200">
                     <div>
                       <div className="text-xs text-slate-600 mb-2">Assigned Route</div>
                       <button
@@ -345,7 +345,7 @@ export function DeliveryDetailScreen({
                   {/* Timing Analysis */}
                   <div>
                     <div className="text-xs text-slate-600 mb-3">Timing Analysis</div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="px-4 py-3 bg-slate-50 rounded-lg border border-slate-200">
                         <div className="text-xs text-slate-600 mb-1">Planned ETA</div>
                         <div className="text-slate-900">{delivery.plannedETA}</div>

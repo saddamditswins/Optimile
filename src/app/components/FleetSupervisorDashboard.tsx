@@ -115,8 +115,8 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <h1 className="text-slate-900 font-medium">Fleet Readiness</h1>
@@ -140,12 +140,12 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1400px] mx-auto space-y-6">
-          
+
           {/* LAYER 0 — CONTEXT & SCOPE */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="grid grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-2 mb-1">
                   <Calendar className="w-4 h-4 text-slate-600" />
@@ -180,7 +180,7 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
             </div>
 
             {/* Scope Selectors */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <span className="text-sm text-slate-700 font-medium">View:</span>
               
               <div className="relative">
@@ -214,7 +214,7 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
           {/* LAYER 1 — OVERALL FLEET READINESS STATUS */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
             <h2 className="text-slate-900 font-medium mb-4">Overall Fleet Readiness</h2>
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               <div className="p-4 bg-green-50 rounded-lg border border-green-200">
                 <div className="flex items-center gap-2 mb-2">
                   <CheckCircle className="w-4 h-4 text-green-600" />
@@ -257,10 +257,10 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* LAYER 2 — DRIVER READINESS SNAPSHOT */}
             <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
                 <h2 className="text-slate-900 font-medium">Driver Readiness</h2>
                 <button 
                   onClick={() => onNavigate?.('fleet-drivers')}
@@ -310,7 +310,7 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
 
             {/* LAYER 3 — VEHICLE READINESS SNAPSHOT */}
             <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
                 <h2 className="text-slate-900 font-medium">Vehicle Readiness</h2>
                 <button 
                   onClick={() => onNavigate?.('fleet-vehicles')}
@@ -443,7 +443,7 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
 
           {/* LAYER 5 — CAPACITY & CONSTRAINT WARNINGS */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-slate-700" />
                 <h2 className="text-slate-900 font-medium">Capacity & Constraint Warnings</h2>
@@ -495,7 +495,7 @@ export function FleetSupervisorDashboard({ onNavigate }: FleetSupervisorDashboar
 
           {/* LAYER 6 — FLEET EXCEPTIONS (READ-ONLY) */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <FileText className="w-5 h-5 text-slate-700" />
                 <h2 className="text-slate-900 font-medium">Fleet Exceptions</h2>

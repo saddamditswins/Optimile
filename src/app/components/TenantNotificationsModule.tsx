@@ -13,13 +13,13 @@ export function TenantNotificationsModule() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h1 className="text-foreground">Notifications & Escalation</h1>
             <p className="text-muted-foreground text-sm">Configure alert routing and escalation policies</p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm">
+          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm self-start sm:self-auto">
             <Settings className="w-5 h-5" />
             <span>Configure Policies</span>
           </button>
@@ -141,9 +141,9 @@ export function TenantNotificationsModule() {
 
           {/* Alert Types Configuration Table */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
               <h2 className="text-foreground">Alert Types Configuration</h2>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button className="px-3 py-2 border border-border hover:bg-accent rounded-lg text-sm transition-colors">
                   Filter by Category
                 </button>

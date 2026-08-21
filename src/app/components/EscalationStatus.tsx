@@ -114,8 +114,8 @@ export function EscalationStatus({
     <div className="min-h-screen bg-slate-50">
       {/* Escalation Status Header */}
       <header className={`bg-gradient-to-r ${getHeaderGradient(escalationData.status)} border-b-4 sticky top-0 z-10`}>
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -141,7 +141,7 @@ export function EscalationStatus({
             </div>
 
             {/* Escalation ID & Time */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20">
                 <div className="text-xs text-white/80 mb-1">Escalation ID</div>
                 <div className="text-white font-mono text-sm">{escalationData.escalationId}</div>
@@ -159,13 +159,13 @@ export function EscalationStatus({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-8">
+      <main className="px-4 sm:px-6 py-8">
         <div className="max-w-[1200px] mx-auto space-y-6">
           {/* Submission Details */}
           <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm p-6">
             <h2 className="text-slate-900 mb-4">Escalation Request Details</h2>
 
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">
                 <div className="text-xs text-slate-600 mb-1">Recovery ID</div>
                 <div className="text-sm text-slate-900 font-mono">{escalationData.recoveryId}</div>
@@ -199,7 +199,7 @@ export function EscalationStatus({
               </div>
 
               {/* Decision Details */}
-              <div className="grid grid-cols-2 gap-4 mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                 <div className="p-4 bg-white rounded-lg border border-green-300">
                   <div className="text-xs text-slate-600 mb-1">Approved By</div>
                   <div className="flex items-center gap-2">
@@ -271,7 +271,7 @@ export function EscalationStatus({
               </div>
 
               {/* Decision Details */}
-              <div className="grid grid-cols-2 gap-4 mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                 <div className="p-4 bg-white rounded-lg border border-red-300">
                   <div className="text-xs text-slate-600 mb-1">Rejected By</div>
                   <div className="flex items-center gap-2">
@@ -352,7 +352,7 @@ export function EscalationStatus({
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-amber-200">
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-amber-200">
                   <div className="text-sm text-amber-700">
                     <strong>Submitted:</strong> {escalationData.submittedAt}
                   </div>
@@ -379,7 +379,7 @@ export function EscalationStatus({
 
           {/* Audit Reference */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-3">
                 <History className="w-5 h-5 text-slate-600" />
                 <div>
@@ -429,8 +429,8 @@ export function EscalationStatus({
 
       {/* Footer */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-slate-300 shadow-lg">
-        <div className="px-6 py-4">
-          <div className="max-w-[1200px] mx-auto flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-center gap-4">
               <Shield className="w-6 h-6 text-slate-600" />
               <div>
@@ -445,10 +445,10 @@ export function EscalationStatus({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={onBack}
-                className="flex items-center gap-2 px-5 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back</span>
@@ -457,7 +457,7 @@ export function EscalationStatus({
               {escalationData.status === 'approved' && (
                 <button
                   onClick={onProceedToCommitReview}
-                  className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors font-medium shadow-lg"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors font-medium shadow-lg"
                 >
                   <Eye className="w-5 h-5" />
                   <span>Proceed to Commit Review</span>
@@ -468,7 +468,7 @@ export function EscalationStatus({
               {escalationData.status === 'rejected' && (
                 <button
                   onClick={onReviseRecoveryPlan}
-                  className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium shadow-lg"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium shadow-lg"
                 >
                   <Edit className="w-5 h-5" />
                   <span>Revise Recovery Plan</span>

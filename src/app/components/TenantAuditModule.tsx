@@ -14,13 +14,13 @@ export function TenantAuditModule() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h1 className="text-foreground">Audit Super-View</h1>
             <p className="text-muted-foreground text-sm">Track all governance events and configuration changes</p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm">
+          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm self-start sm:self-auto">
             <Download className="w-5 h-5" />
             <span>Export Audit Log</span>
           </button>
@@ -114,8 +114,8 @@ export function TenantAuditModule() {
 
           {/* Filters */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-4">
-            <div className="flex items-center gap-4">
-              <div className="flex-1 relative">
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="w-full sm:flex-1 relative">
                 <Search className="w-5 h-5 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
@@ -177,9 +177,9 @@ export function TenantAuditModule() {
 
           {/* Unified Audit Timeline */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
               <h2 className="text-foreground">Unified Audit Timeline</h2>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button className="px-3 py-2 border border-border hover:bg-accent rounded-lg text-sm transition-colors">
                   Filter by Severity
                 </button>
@@ -283,9 +283,9 @@ export function TenantAuditModule() {
 
           {/* Compliance Snapshot */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
               <h2 className="text-foreground">Compliance Snapshot & Evidence Pack</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm transition-colors self-start sm:self-auto">
                 <Download className="w-5 h-5" />
                 <span>Generate Evidence Pack</span>
               </button>

@@ -13,7 +13,7 @@ export function SuperAdminDashboard() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-foreground">Dashboard</h1>
           <p className="text-muted-foreground text-sm">Platform-level oversight and governance</p>
@@ -21,11 +21,11 @@ export function SuperAdminDashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          
+
           {/* STEP 1 — KPI STRIP */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Total Tenants */}
             <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
@@ -89,7 +89,7 @@ export function SuperAdminDashboard() {
 
           {/* STEP 2 — REVENUE TREND */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div>
                 <h2 className="text-foreground mb-1">Revenue Trend</h2>
                 <p className="text-muted-foreground text-sm">Monthly revenue over last 6 months</p>
@@ -262,7 +262,7 @@ export function SuperAdminDashboard() {
 
           {/* STEP 4 — TENANT RISK & ATTENTION GRID */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
               <div>
                 <h2 className="text-foreground mb-1">Tenants Requiring Attention</h2>
                 <p className="text-muted-foreground text-sm">Tenants with governance or operational risks</p>
@@ -383,7 +383,7 @@ export function SuperAdminDashboard() {
 
           {/* STEP 6 — SUPPORT & ESCALATION SUMMARY */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div>
                 <h2 className="text-foreground mb-1">Support & Escalation Summary</h2>
                 <p className="text-muted-foreground text-sm">Platform-level support and escalation metrics</p>
@@ -391,7 +391,7 @@ export function SuperAdminDashboard() {
               <button className="text-primary hover:text-blue-700 text-sm">View Support Module</button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="p-4 bg-muted rounded-lg">
                 <p className="text-muted-foreground text-sm mb-2">Open Platform Escalations</p>
                 <p className="text-3xl text-foreground">18</p>

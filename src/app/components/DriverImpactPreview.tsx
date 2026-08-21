@@ -169,8 +169,8 @@ export function DriverImpactPreview({
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -217,10 +217,10 @@ export function DriverImpactPreview({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto space-y-6">
           {/* Comparison Layout */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Current State */}
             <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm">
               <div className="bg-slate-100 border-b border-slate-300 px-6 py-3">
@@ -445,7 +445,7 @@ export function DriverImpactPreview({
           {/* Impact Metrics Summary */}
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6">
             <h2 className="text-slate-900 mb-4">Impact Metrics Summary</h2>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {impacts.map((impact) => (
                 <ImpactMetricCard key={impact.id} impact={impact} />
               ))}
@@ -454,14 +454,14 @@ export function DriverImpactPreview({
 
           {/* Secondary Risks - CRITICAL */}
           <div className="bg-gradient-to-br from-red-50 to-amber-50 rounded-lg border-2 border-red-300 shadow-md p-6">
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
               <div>
                 <h2 className="text-slate-900 mb-1">Secondary Risks Introduced</h2>
                 <p className="text-slate-600 text-sm">
                   New risks created by this intervention that may cause downstream failures
                 </p>
               </div>
-              <div className="px-3 py-1 bg-red-600 text-white text-xs rounded-full">
+              <div className="px-3 py-1 bg-red-600 text-white text-xs rounded-full self-start">
                 CRITICAL REVIEW
               </div>
             </div>
@@ -525,7 +525,7 @@ export function DriverImpactPreview({
                 <p className="text-slate-700 text-sm mb-3">
                   {acknowledgment.reason}
                 </p>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                   <div>
                     <div className="text-slate-600 text-xs mb-1">Estimated Response Time</div>
                     <div className="text-slate-900">{acknowledgment.estimatedResponseTime}</div>
@@ -545,14 +545,14 @@ export function DriverImpactPreview({
 
           {/* Navigation Controls */}
           <div className="bg-slate-100 rounded-lg border border-slate-300 p-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div>
                 <h3 className="text-slate-900 mb-1 text-sm">Next Steps</h3>
                 <p className="text-slate-600 text-sm">
                   Review all impacts and return to Recovery Workspace to finalize decision
                 </p>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <button 
                   onClick={onViewEvidenceSnapshot}
                   className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"

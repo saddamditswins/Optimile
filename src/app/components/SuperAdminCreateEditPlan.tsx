@@ -393,7 +393,7 @@ export function SuperAdminCreateEditPlan({ planId, onClose, onSave }: SuperAdmin
               <h3 className="text-foreground mb-4">Regional Availability</h3>
               <p className="text-muted-foreground text-sm mb-4">Countries/regions where this plan is sellable</p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {['United States', 'Canada', 'United Kingdom', 'Germany', 'France', 'Spain', 'Australia', 'Japan', 'Singapore'].map(region => (
                   <label key={region} className="flex items-center gap-2 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent transition-colors">
                     <input
@@ -458,7 +458,7 @@ export function SuperAdminCreateEditPlan({ planId, onClose, onSave }: SuperAdmin
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-border bg-muted flex items-center justify-between">
+        <div className="px-6 py-4 border-t border-border bg-muted flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={onClose}
             className="px-6 py-2 border border-border rounded-lg hover:bg-accent transition-colors"

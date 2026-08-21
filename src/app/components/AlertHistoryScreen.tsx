@@ -458,8 +458,8 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -499,7 +499,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
           </div>
 
           {/* Summary Metrics */}
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-slate-600">Total Alerts</span>
@@ -552,8 +552,8 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
         </div>
 
         {/* Filters */}
-        <div className="px-6 pb-4">
-          <div className="flex items-center gap-3">
+        <div className="px-4 sm:px-6 pb-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -572,7 +572,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
             <select
               value={alertTypeFilter}
               onChange={(e) => setAlertTypeFilter(e.target.value as AlertType | 'all')}
-              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Types</option>
               <option value="sla-risk">SLA Risk</option>
@@ -586,7 +586,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
             <select
               value={severityFilter}
               onChange={(e) => setSeverityFilter(e.target.value as SeverityLevel | 'all')}
-              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Severities</option>
               <option value="critical">Critical</option>
@@ -599,7 +599,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
             <select
               value={outcomeFilter}
               onChange={(e) => setOutcomeFilter(e.target.value as AlertOutcome | 'all')}
-              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Outcomes</option>
               <option value="resolved">Resolved</option>
@@ -612,14 +612,15 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1800px] mx-auto">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Alert History List */}
-            <div className="col-span-2">
+            <div className="lg:col-span-2">
               <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+                <div className="overflow-x-auto">
                 {/* Table Header */}
-                <div className="bg-slate-50 border-b border-slate-200 px-4 py-3">
+                <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 min-w-[820px]">
                   <div className="grid grid-cols-12 gap-4 text-xs text-slate-600 uppercase tracking-wide">
                     <div className="col-span-2">Alert ID</div>
                     <div className="col-span-2">Type</div>
@@ -632,7 +633,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
                 </div>
 
                 {/* Alerts List */}
-                <div className="divide-y divide-slate-200 max-h-[700px] overflow-y-auto">
+                <div className="divide-y divide-slate-200 max-h-[700px] overflow-y-auto min-w-[820px]">
                   {filteredAlerts.length === 0 ? (
                     <div className="px-4 py-12 text-center">
                       <FileText className="w-12 h-12 text-slate-300 mx-auto mb-3" />
@@ -702,6 +703,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
                       </div>
                     ))
                   )}
+                </div>
                 </div>
               </div>
             </div>
@@ -836,7 +838,7 @@ export function AlertHistoryScreen({ onBack }: AlertHistoryScreenProps) {
       </main>
 
       {/* Info Footer */}
-      <div className="px-6 pb-6">
+      <div className="px-4 sm:px-6 pb-6">
         <div className="max-w-[1800px] mx-auto">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <div className="flex items-start gap-3">

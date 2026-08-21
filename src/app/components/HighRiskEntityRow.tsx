@@ -71,7 +71,7 @@ export function HighRiskEntityRow({ entity, rank, onClick }: HighRiskEntityRowPr
   return (
     <button
       onClick={onClick}
-      className="w-full px-6 py-4 hover:bg-slate-50 transition-colors duration-150 flex items-center gap-4 group"
+      className="w-full px-6 py-4 hover:bg-slate-50 transition-colors duration-150 flex flex-wrap items-center gap-x-4 gap-y-3 group"
     >
       {/* Rank */}
       <div className={`${styles.rankBg} border w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0`}>

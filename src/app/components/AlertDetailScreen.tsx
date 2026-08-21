@@ -278,8 +278,8 @@ export function AlertDetailScreen({
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -310,11 +310,11 @@ export function AlertDetailScreen({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Main Info */}
-            <div className="col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-6">
               {/* Alert Summary Panel */}
               <div className="bg-gradient-to-br from-red-50 to-amber-50 rounded-lg border-2 border-red-200 shadow-sm p-6">
                 <div className="flex items-start gap-3 mb-4">
@@ -332,7 +332,7 @@ export function AlertDetailScreen({
                 </div>
 
                 {/* Risk Summary Metrics */}
-                <div className="grid grid-cols-4 gap-3 pt-4 border-t-2 border-red-300">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t-2 border-red-300">
                   <div className="px-3 py-2 bg-white rounded-lg border border-red-200">
                     <div className="text-xs text-slate-600 mb-1">Penalty Exposure</div>
                     <div className="flex items-center gap-1">
@@ -389,7 +389,7 @@ export function AlertDetailScreen({
                             {route.status}
                           </span>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                           <div className="flex items-center gap-2">
                             <TrendingDown className="w-4 h-4 text-amber-600" />
                             <span className="text-slate-700">+{route.delayMinutes} min delay</span>
@@ -444,7 +444,7 @@ export function AlertDetailScreen({
                             )}
                           </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 text-sm pt-3 border-t border-current/20">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-3 border-t border-current/20">
                           <div>
                             <div className="text-xs text-slate-600 mb-1">SLA Window</div>
                             <div className="text-slate-700">{delivery.slaWindow}</div>

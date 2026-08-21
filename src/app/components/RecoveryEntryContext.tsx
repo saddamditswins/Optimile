@@ -116,7 +116,7 @@ export function RecoveryEntryContext({
     <div className="flex flex-col h-screen bg-background">
       {/* Header */}
       <div className="border-b bg-card">
-        <div className="px-8 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={onBack}
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground mb-4 transition-colors"
@@ -138,11 +138,11 @@ export function RecoveryEntryContext({
 
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="px-8 py-6 max-w-5xl">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-5xl">
           
           {/* LAYER 0: ENTRY CONTEXT (ORIENTATION) */}
           <div className="mb-8 bg-card border rounded-lg p-5">
-            <div className="grid grid-cols-3 gap-6 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
               <div>
                 <div className="text-xs text-muted-foreground mb-1">Recovery Type</div>
                 <div className="text-foreground font-medium">{getTriggerSourceLabel()}</div>
@@ -171,7 +171,7 @@ export function RecoveryEntryContext({
                   <h2 className="text-xl font-semibold text-orange-900 mb-3">
                     {recoveryContext.recoveryVerdict}
                   </h2>
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center gap-2">
                       <Clock className="w-5 h-5 text-orange-700" />
                       <span className="text-base font-medium text-orange-900">
@@ -359,7 +359,7 @@ export function RecoveryEntryContext({
                   <p className="text-sm text-amber-800 mb-3">
                     {recoveryContext.guardrails.escalationRequirements.reason}
                   </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="text-xs text-amber-700 mb-1">Escalate To</div>
                       <div className="text-amber-900 font-medium">
@@ -383,8 +383,8 @@ export function RecoveryEntryContext({
 
       {/* LAYER 5: READINESS & COMMITMENT GATE (FIXED ACTION AREA) */}
       <div className="border-t bg-card">
-        <div className="px-8 py-6 max-w-5xl">
-          <div className="flex items-center justify-between gap-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-5xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6">
             <div className="flex items-start gap-3 flex-1">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
               <div>

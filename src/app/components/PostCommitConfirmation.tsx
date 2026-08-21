@@ -104,19 +104,19 @@ export function PostCommitConfirmation({
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       {/* Confirmation Header */}
       <header className="bg-gradient-to-r from-green-600 to-green-700 border-b-4 border-green-800">
-        <div className="px-6 py-6">
+        <div className="px-4 sm:px-6 py-6">
           <div className="max-w-[1400px] mx-auto">
             {/* Success Icon and Message */}
-            <div className="flex items-start gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
               <div className="p-4 bg-white rounded-xl shadow-lg">
                 <CheckCircle className="w-16 h-16 text-green-600" />
               </div>
               <div className="flex-1">
-                <h1 className="text-white text-3xl mb-2">Recovery Plan Committed Successfully</h1>
+                <h1 className="text-white text-2xl sm:text-3xl mb-2">Recovery Plan Committed Successfully</h1>
                 <p className="text-green-100 text-lg mb-4">
                   Execution is now underway. All affected drivers have been notified and are coordinating the handoff.
                 </p>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur rounded-lg border border-white/30">
                     <FileText className="w-4 h-4 text-white" />
                     <span className="text-white font-mono text-sm">{commitData.recoveryId}</span>
@@ -135,7 +135,7 @@ export function PostCommitConfirmation({
 
             {/* Execution Status Banner */}
             <div className="bg-white/10 backdrop-blur border border-white/30 rounded-lg p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <Radio className="w-5 h-5 text-white animate-pulse" />
                   <div>
@@ -145,7 +145,7 @@ export function PostCommitConfirmation({
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                   <div className="text-center px-4">
                     <div className="text-white text-2xl font-medium">{commitData.executionSummary.actionsExecuting}</div>
                     <div className="text-green-100 text-xs">Actions</div>
@@ -168,7 +168,7 @@ export function PostCommitConfirmation({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-8">
+      <main className="px-4 sm:px-6 py-8">
         <div className="max-w-[1400px] mx-auto space-y-6">
           {/* Actions Being Executed */}
           <div className="bg-white rounded-lg border-2 border-green-300 shadow-sm p-6">
@@ -185,7 +185,7 @@ export function PostCommitConfirmation({
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex flex-wrap items-center justify-between gap-y-2 mb-3">
                         <div>
                           <h3 className="text-slate-900 font-medium mb-1">{action.type}</h3>
                           <p className="text-sm text-slate-700">{action.description}</p>
@@ -210,7 +210,7 @@ export function PostCommitConfirmation({
           <div className="bg-white rounded-lg border-2 border-slate-200 shadow-sm p-6">
             <h2 className="text-slate-900 mb-5">Affected Entities</h2>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {/* Routes */}
               <div>
                 <h3 className="text-sm text-slate-700 font-medium mb-3 uppercase flex items-center gap-2">
@@ -281,7 +281,7 @@ export function PostCommitConfirmation({
               <h2 className="text-slate-900">Expected Outcome</h2>
             </div>
 
-            <div className="grid grid-cols-4 gap-4 mb-5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
               <div className="p-4 bg-white rounded-lg shadow-sm">
                 <div className="text-xs text-slate-600 mb-2">Deliveries Protected</div>
                 <div className="text-2xl text-green-700 font-medium">{commitData.expectedOutcome.deliveriesSaved}</div>
@@ -316,7 +316,7 @@ export function PostCommitConfirmation({
               <h2 className="text-slate-900">Next Steps</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {/* Execution Monitor */}
               <button
                 onClick={onViewExecutionMonitor}
@@ -377,7 +377,7 @@ export function PostCommitConfirmation({
 
           {/* Evidence Reference */}
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-5">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-3">
                 <Shield className="w-5 h-5 text-slate-600" />
                 <div>
@@ -397,8 +397,8 @@ export function PostCommitConfirmation({
 
       {/* Footer */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-green-300 shadow-lg">
-        <div className="px-6 py-4">
-          <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-4">
               <CheckCircle className="w-6 h-6 text-green-600" />
               <div>
@@ -409,10 +409,10 @@ export function PostCommitConfirmation({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={onViewExecutionMonitor}
-                className="flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
               >
                 <Eye className="w-4 h-4" />
                 <span>Monitor Execution</span>
@@ -420,7 +420,7 @@ export function PostCommitConfirmation({
 
               <button
                 onClick={onReturnToDashboard}
-                className="flex items-center gap-2 px-5 py-3 bg-slate-600 hover:bg-slate-700 text-white rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-slate-600 hover:bg-slate-700 text-white rounded-lg transition-colors"
               >
                 <Navigation className="w-4 h-4" />
                 <span>Return to Dashboard</span>

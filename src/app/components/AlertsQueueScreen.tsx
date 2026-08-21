@@ -339,8 +339,8 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b-2 border-red-200">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
             <div>
               <h1 className="text-slate-900 mb-1">Alerts & Exceptions</h1>
               <p className="text-slate-600 text-sm">
@@ -349,7 +349,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
             </div>
 
             {/* Context Indicators */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-2 px-3 py-2 bg-slate-50 rounded-lg border border-slate-200">
                 <Calendar className="w-4 h-4 text-slate-600" />
                 <span className="text-sm text-slate-700">Wed, Dec 31, 2025</span>
@@ -385,8 +385,8 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
         </div>
 
         {/* Summary Cards */}
-        <div className="px-6 pb-4">
-          <div className="grid grid-cols-4 gap-4">
+        <div className="px-4 sm:px-6 pb-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-red-800">Critical Alerts</span>
@@ -427,9 +427,9 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
       </header>
 
       {/* Filters & Controls */}
-      <div className="px-6 py-4 bg-white border-b border-slate-200">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 flex-1">
+      <div className="px-4 sm:px-6 py-4 bg-white border-b border-slate-200">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 flex-1">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -448,7 +448,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
               <select
                 value={severityFilter}
                 onChange={(e) => setSeverityFilter(e.target.value as SeverityLevel | 'all')}
-                className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="all">All Severities</option>
                 <option value="critical">Critical</option>
@@ -462,7 +462,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
             <select
               value={alertTypeFilter}
               onChange={(e) => setAlertTypeFilter(e.target.value as AlertType | 'all')}
-              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Alert Types</option>
               <option value="sla-risk">SLA Risk</option>
@@ -476,7 +476,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
             <select
               value={entityTypeFilter}
               onChange={(e) => setEntityTypeFilter(e.target.value as EntityType | 'all')}
-              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Entities</option>
               <option value="route">Routes</option>
@@ -500,7 +500,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
 
         {/* Active Filters Summary */}
         {(severityFilter !== 'all' || alertTypeFilter !== 'all' || entityTypeFilter !== 'all' || searchQuery || showCriticalOnly) && (
-          <div className="flex items-center gap-2 mt-3 text-sm text-slate-600">
+          <div className="flex flex-wrap items-center gap-2 mt-3 text-sm text-slate-600">
             <span>Active filters:</span>
             {severityFilter !== 'all' && (
               <span className="px-2 py-1 bg-slate-100 rounded">Severity: {severityFilter}</span>
@@ -534,10 +534,11 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
       </div>
 
       {/* Alerts Queue */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+          <div className="overflow-x-auto">
           {/* Table Header */}
-          <div className="bg-slate-50 border-b border-slate-200 px-4 py-3">
+          <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 min-w-[900px]">
             <div className="grid grid-cols-12 gap-4 text-xs text-slate-600 uppercase tracking-wide">
               <div className="col-span-2">Alert Type</div>
               <div className="col-span-1">Severity</div>
@@ -549,7 +550,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
           </div>
 
           {/* Alerts List */}
-          <div className="divide-y divide-slate-200">
+          <div className="divide-y divide-slate-200 min-w-[900px]">
             {filteredAlerts.length === 0 ? (
               <div className="px-4 py-12 text-center">
                 <AlertCircle className="w-12 h-12 text-slate-300 mx-auto mb-3" />
@@ -634,6 +635,7 @@ export function AlertsQueueScreen({ onSelectAlert }: AlertsQueueScreenProps) {
                 </div>
               ))
             )}
+          </div>
           </div>
         </div>
 

@@ -137,7 +137,7 @@ export function MapSidePanel({ routeId, onStopClick }: MapSidePanelProps) {
   };
 
   return (
-    <div className="w-96 bg-white border-l border-slate-200 flex flex-col overflow-hidden">
+    <div className="w-full lg:w-96 h-[60vh] lg:h-auto bg-white border-t lg:border-t-0 lg:border-l border-slate-200 flex flex-col overflow-hidden">
       {/* Header */}
       <div className="border-b border-slate-200 px-6 py-4">
         <h3 className="text-slate-900">Upcoming Stops</h3>

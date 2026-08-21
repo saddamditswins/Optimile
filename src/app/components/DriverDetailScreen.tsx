@@ -162,8 +162,8 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -195,7 +195,7 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
           </div>
 
           {/* Context Bar */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-slate-600">Driver ID:</span>
               <span className="text-slate-900">{driverData.driverId}</span>
@@ -213,12 +213,12 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto space-y-6">
           {/* Driver Summary Panel */}
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6">
             <h2 className="text-slate-900 mb-4">Driver Summary</h2>
-            <div className="grid grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
               <div>
                 <div className="text-slate-600 text-sm mb-1">Execution State</div>
                 <div className="flex items-center gap-2">
@@ -271,7 +271,7 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
                 <div className="text-slate-600 text-sm mb-2">Execution Pace</div>
                 <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded ${paceIndicator.color}`}>
@@ -301,19 +301,19 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
 
           {/* Constraint & Eligibility Panel - CRITICAL SECTION */}
           <div className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-lg border-2 border-blue-200 shadow-md p-6">
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
               <div>
                 <h2 className="text-slate-900 mb-1">Constraint & Eligibility Assessment</h2>
                 <p className="text-slate-600 text-sm">
                   Evaluate operational constraints before assignment decisions
                 </p>
               </div>
-              <div className="px-3 py-1 bg-blue-600 text-white text-xs rounded-full">
+              <div className="px-3 py-1 bg-blue-600 text-white text-xs rounded-full self-start">
                 CRITICAL SECTION
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {constraints.map((constraint) => (
                 <DriverConstraintCard key={constraint.id} constraint={constraint} />
               ))}
@@ -388,7 +388,7 @@ export function DriverDetailScreen({ driverId, onBack, onOpenTimeline, onOpenImp
           {/* Navigation Controls */}
           <div className="bg-slate-100 rounded-lg border border-slate-200 p-6">
             <h3 className="text-slate-900 mb-4 text-sm">Additional Analysis Tools</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <button 
                 onClick={onOpenTimeline}
                 className="flex items-center justify-between px-4 py-3 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"

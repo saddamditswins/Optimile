@@ -12,7 +12,7 @@ import { CheckCircle, AlertTriangle, AlertCircle, Settings, Mail, ArrowRight } f
 
 export function DesignSystemShowcase() {
   return (
-    <div className="min-h-screen bg-background p-8">
+    <div className="min-h-screen bg-background p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-center">

@@ -1,6 +1,6 @@
 import { RoleCard } from './RoleCard';
 import { OptiMileLogo } from './OptiMileLogo';
-import { ThemeDropdown } from './ThemeDropdown';
+import { ThemeToggle } from './ThemeToggle';
 import { Shield, Users, Radio, BarChart3, Truck, Smartphone, ArrowLeft } from 'lucide-react';
 
 interface Role {
@@ -93,27 +93,18 @@ export function RoleSelection({ onRoleSelect, onBackToHome }: RoleSelectionProps
       </div> */}
 
       {/* Header */}
-      <header className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 px-6 py-6 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
+      <header className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 py-3 sm:py-4 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-6 cursor-pointer min-w-0" onClick={onBackToHome}>
             <OptiMileLogo size="default" />
-            {onBackToHome && (
-              <button
-                onClick={onBackToHome}
-                className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </button>
-            )}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             {/* Demo Mode Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-              <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-sm text-blue-700 dark:text-blue-300 font-medium">Demo Mode</span>
+            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse shrink-0"></div>
+              <span className="text-sm text-blue-700 dark:text-blue-300 font-medium whitespace-nowrap">Demo Mode</span>
             </div>
-            <ThemeDropdown />
+            <ThemeToggle />
           </div>
         </div>
       </header>

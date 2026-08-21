@@ -268,9 +268,9 @@ export function DriversOverviewScreen({ onDriverClick }: DriversOverviewScreenPr
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
+        <div className="px-4 sm:px-6 py-4">
           {/* Top Row */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div>
               <h1 className="text-slate-900 mb-1">Drivers</h1>
               <p className="text-slate-600 text-sm">
@@ -279,7 +279,7 @@ export function DriversOverviewScreen({ onDriverClick }: DriversOverviewScreenPr
             </div>
 
             {/* Live Indicator */}
-            <div className="flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-lg">
+            <div className="flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-lg self-start">
               <div className="relative">
                 <Radio className="w-4 h-4 text-green-600" />
                 <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -293,7 +293,7 @@ export function DriversOverviewScreen({ onDriverClick }: DriversOverviewScreenPr
           </div>
 
           {/* Context Indicators */}
-          <div className="flex items-center gap-6 text-sm mb-4">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm mb-4">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-slate-600" />
               <span className="text-slate-600">Wednesday, Dec 31, 2025</span>
@@ -318,7 +318,7 @@ export function DriversOverviewScreen({ onDriverClick }: DriversOverviewScreenPr
           </div>
 
           {/* Stats Summary */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-slate-600">Total Drivers:</span>
               <span className="text-slate-900">{stats.total}</span>
@@ -344,13 +344,13 @@ export function DriversOverviewScreen({ onDriverClick }: DriversOverviewScreenPr
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1800px] mx-auto">
           {/* Filters & Controls */}
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-4 mb-6">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
               {/* Search */}
-              <div className="flex-1 max-w-md">
+              <div className="flex-1 min-w-[200px] max-w-md">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                   <input

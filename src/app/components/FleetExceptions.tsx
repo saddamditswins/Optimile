@@ -155,7 +155,7 @@ export function FleetExceptions() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border bg-card">
-        <div className="max-w-7xl mx-auto px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-1">
               <h1 className="text-2xl font-semibold text-foreground">Fleet Exceptions</h1>
@@ -168,7 +168,7 @@ export function FleetExceptions() {
 
           {/* LAYER 0 - Context & Scope */}
           <div className="bg-muted/30 border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-4">
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-muted-foreground" />
                 <span className="text-sm font-medium text-foreground">Observation Scope</span>
@@ -179,7 +179,7 @@ export function FleetExceptions() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Time Window */}
               <div>
                 <label className="block text-xs text-muted-foreground mb-2">Time Window</label>
@@ -229,7 +229,7 @@ export function FleetExceptions() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 py-6 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* LAYER 1 - Exception Summary */}
         <section>
           <div className="flex items-center gap-2 mb-4">
@@ -238,7 +238,7 @@ export function FleetExceptions() {
             <span className="text-xs text-muted-foreground">(High-level awareness)</span>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-card border border-border rounded-lg p-5">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
@@ -440,7 +440,7 @@ export function FleetExceptions() {
             <p className="text-sm text-muted-foreground mb-4">
               Navigate to fleet management modules to investigate upstream causes and prevent recurrence
             </p>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <button
                 onClick={() => {
                   // Navigate to Drivers Management

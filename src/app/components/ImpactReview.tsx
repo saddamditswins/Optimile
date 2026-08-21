@@ -315,8 +315,8 @@ export function ImpactReview({
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-700 border-b-4 border-blue-800 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -338,7 +338,7 @@ export function ImpactReview({
             </div>
 
             {/* Draft Info */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20">
                 <div className="text-xs text-blue-100 mb-1">Recovery ID</div>
                 <div className="text-white font-mono text-sm">{draftMetadata.recoveryId}</div>
@@ -360,10 +360,10 @@ export function ImpactReview({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1800px] mx-auto space-y-6">
           {/* Impact Metrics Summary */}
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {impactMetrics.map((metric) => (
               <div
                 key={metric.id}
@@ -386,7 +386,7 @@ export function ImpactReview({
           </div>
 
           {/* Comparison View */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Current State */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -629,7 +629,7 @@ export function ImpactReview({
 
           {/* Policy Evaluation */}
           <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-5">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-slate-600" />
                 <h2 className="text-slate-900">Policy Evaluation</h2>
@@ -694,7 +694,7 @@ export function ImpactReview({
                   <Lock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                   <div className="flex-1">
                     <div className="text-amber-900 font-medium mb-2">Management Escalation Required</div>
-                    <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                       <div>
                         <div className="text-xs text-amber-700 mb-1">Reason</div>
                         <div className="text-amber-900">{policyEvaluation.escalation.reason}</div>
@@ -718,8 +718,8 @@ export function ImpactReview({
 
       {/* Footer Controls */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-slate-300 shadow-lg">
-        <div className="px-6 py-4">
-          <div className="max-w-[1800px] mx-auto flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-center gap-4">
               <FileCheck className="w-5 h-5 text-slate-600" />
               <div>
@@ -732,10 +732,10 @@ export function ImpactReview({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={onBack}
-                className="flex items-center gap-2 px-5 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to Draft
@@ -744,7 +744,7 @@ export function ImpactReview({
               <button
                 onClick={onProceedToCommitReview}
                 disabled={!canProceed}
-                className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${
+                className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition-all ${
                   canProceed
                     ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg'
                     : 'bg-slate-200 text-slate-400 cursor-not-allowed'
@@ -762,7 +762,7 @@ export function ImpactReview({
               {policyEvaluation.escalation.required && (
                 <button
                   onClick={onRequestEscalation}
-                  className="flex items-center gap-2 px-6 py-3 rounded-lg bg-amber-500 text-white shadow-lg"
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber-500 text-white shadow-lg"
                 >
                   <AlertCircle className="w-5 h-5" />
                   Request Escalation

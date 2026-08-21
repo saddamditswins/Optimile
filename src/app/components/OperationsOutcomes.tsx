@@ -179,7 +179,7 @@ export function OperationsOutcomes() {
       {/* Header */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
         <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <h1 className="text-slate-900 font-medium">Outcomes</h1>
@@ -208,7 +208,7 @@ export function OperationsOutcomes() {
           
           {/* LAYER 0 — REVIEW CONTEXT */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="grid grid-cols-4 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-2 mb-1">
                   <Calendar className="w-4 h-4 text-slate-600" />
@@ -243,7 +243,7 @@ export function OperationsOutcomes() {
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-slate-600" />
                 <span className="text-sm text-slate-700 font-medium">Filters:</span>
@@ -281,7 +281,7 @@ export function OperationsOutcomes() {
           {/* LAYER 1 — OUTCOME SUMMARY (Decision-Level) */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-6">
             <h2 className="text-slate-900 font-medium mb-4">Outcome Summary</h2>
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               <div className="p-4 bg-slate-50 rounded-lg border border-slate-300">
                 <div className="text-xs text-slate-600 mb-2">Total Reviewed</div>
                 <div className="text-3xl text-slate-900 font-medium">{outcomesData.summary.totalReviewed}</div>
@@ -324,9 +324,9 @@ export function OperationsOutcomes() {
                 >
                   <div className="p-5">
                     {/* Header Row */}
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
                           <h3 className="text-slate-900 font-medium font-mono">{recovery.recoveryId}</h3>
                           {getOutcomeBadge(recovery.outcomeStatus)}
                         </div>
@@ -343,7 +343,7 @@ export function OperationsOutcomes() {
                     </div>
 
                     {/* Metrics Grid */}
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                       <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Clock className="w-4 h-4 text-slate-600" />
@@ -385,7 +385,7 @@ export function OperationsOutcomes() {
                           Outcome Detail (Read-Only Governance View)
                         </h4>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                             <div className="text-xs text-slate-600 mb-2">Outcome Classification</div>
                             <div className="text-sm text-slate-900">{recovery.outcomeDetail.classification}</div>
@@ -451,7 +451,7 @@ export function OperationsOutcomes() {
               <h2 className="text-slate-900 font-medium">Learning Signals</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Success Patterns */}
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase flex items-center gap-2">

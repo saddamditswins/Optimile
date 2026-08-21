@@ -135,8 +135,8 @@ export function OperationsManagerDashboard({
           </div>
 
           {/* Bottom Row */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-2 gap-x-3">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <Clock className="w-4 h-4" />
                 <span>{dashboardData.currentDate}</span>
@@ -151,7 +151,7 @@ export function OperationsManagerDashboard({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-xs text-green-600 font-medium">Live</span>
@@ -174,7 +174,7 @@ export function OperationsManagerDashboard({
           {/* LAYER 1 — TODAY'S GOVERNANCE STATUS (At a Glance) */}
           <div>
             <h2 className="text-slate-900 font-medium mb-4">Today's Governance Status</h2>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white rounded-lg border border-slate-300 p-5 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-slate-600">Awaiting Approval</span>
@@ -223,7 +223,7 @@ export function OperationsManagerDashboard({
 
           {/* LAYER 2 — APPROVAL PRESSURE (Primary Focus) */}
           <div className="bg-white rounded-lg border-2 border-blue-400 shadow-md p-6">
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Shield className="w-6 h-6 text-blue-600" />
@@ -233,7 +233,7 @@ export function OperationsManagerDashboard({
               </div>
               <button
                 onClick={onNavigateToEscalations}
-                className="flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm"
               >
                 <span className="font-medium">Review Escalations</span>
                 <ChevronRight className="w-4 h-4" />
@@ -282,7 +282,7 @@ export function OperationsManagerDashboard({
               <h2 className="text-slate-900 font-medium">Risk Exposure Snapshot</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-5 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-2">Total SLA Penalty Exposure</div>
                 <div className="text-2xl text-slate-900 font-medium">
@@ -326,7 +326,7 @@ export function OperationsManagerDashboard({
               <h2 className="text-slate-900 font-medium">Policy Health Indicators</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="p-4 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-2">Policy Breaches Today</div>
                 <div className="text-3xl text-slate-900 font-medium mb-2">
@@ -356,7 +356,7 @@ export function OperationsManagerDashboard({
               <h2 className="text-slate-900 font-medium">Trend Direction</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-3">Escalation Volume</div>
                 <div className="flex items-center gap-2 mb-2">
@@ -404,7 +404,7 @@ export function OperationsManagerDashboard({
               <h2 className="text-slate-900 font-medium">Decision Accountability</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-slate-50 border border-slate-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-2">Average Approval Time</div>
                 <div className="text-2xl text-slate-900 font-medium">

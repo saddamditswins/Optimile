@@ -102,16 +102,16 @@ export function SuperAdminPlanManagement({ onBack, onViewPlan, onCreatePlan }: S
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-2">
+          <div className="flex items-start sm:items-center gap-4 mb-2">
             <button
               onClick={onBack}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors mt-1 sm:mt-0"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <div className="flex-1 flex items-center justify-between">
+            <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <h1 className="text-foreground">Plan Management</h1>
                 <p className="text-muted-foreground text-sm">Manage all subscription plan templates</p>
@@ -128,12 +128,12 @@ export function SuperAdminPlanManagement({ onBack, onViewPlan, onCreatePlan }: S
         </div>
       </header>
 
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto">
-          
+
           <div className="bg-card rounded-lg shadow-sm border border-border">
             {/* Search and Filters Bar */}
-            <div className="p-4 border-b border-border flex items-center gap-4">
+            <div className="p-4 border-b border-border flex flex-col sm:flex-row sm:items-center gap-4">
               {/* Search */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -157,7 +157,7 @@ export function SuperAdminPlanManagement({ onBack, onViewPlan, onCreatePlan }: S
               {/* Advanced Filters */}
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-accent transition-colors"
               >
                 <Filter className="w-4 h-4" />
                 Filters
@@ -325,7 +325,7 @@ export function SuperAdminPlanManagement({ onBack, onViewPlan, onCreatePlan }: S
 
             {/* Pagination */}
             {filteredPlans.length > 0 && (
-              <div className="p-4 border-t border-border flex items-center justify-between">
+              <div className="p-4 border-t border-border flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm text-muted-foreground">
                   Showing {filteredPlans.length} of {filteredPlans.length} plans
                 </p>

@@ -67,7 +67,7 @@ export function PriorityIssueRow({ issue, rank, onClick }: PriorityIssueRowProps
   return (
     <button
       onClick={onClick}
-      className="w-full px-6 py-4 hover:bg-accent transition-colors duration-150 flex items-center gap-4 group"
+      className="w-full px-6 py-4 hover:bg-accent transition-colors duration-150 flex flex-wrap items-center gap-x-4 gap-y-3 group"
     >
       {/* Rank */}
       <div className={`${styles.rankBg} w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0`}>

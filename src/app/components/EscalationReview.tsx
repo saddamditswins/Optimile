@@ -137,7 +137,7 @@ export function EscalationReview({
       {/* LAYER 0 — ENTRY CONTEXT (Neutral Orientation) */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
         <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -152,7 +152,7 @@ export function EscalationReview({
             </div>
 
             {/* Context Info */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="text-xs text-slate-600 mb-1">Escalation ID</div>
                 <div className="text-slate-900 font-mono text-sm">{escalationData.escalationId}</div>
@@ -191,7 +191,7 @@ export function EscalationReview({
                 <div className="text-slate-900 font-medium text-lg mb-1">{escalationData.governance.policyName}</div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 <div className="p-4 bg-white border border-slate-300 rounded-lg">
                   <div className="text-xs text-slate-600 mb-1">Policy Threshold</div>
                   <div className="text-slate-900 font-medium text-lg">{escalationData.governance.policyThreshold}</div>
@@ -245,7 +245,7 @@ export function EscalationReview({
             {/* Impact Scope Summary */}
             <div className="pt-4 border-t border-slate-200">
               <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">Impact Scope</h3>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
                     <RouteIcon className="w-3 h-3 text-blue-700" />
@@ -283,7 +283,7 @@ export function EscalationReview({
               <h2 className="text-slate-900 font-medium">Business Impact Analysis</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Benefits */}
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">If Approved</h3>
@@ -411,7 +411,7 @@ export function EscalationReview({
               <h2 className="text-slate-900 font-medium">Decision Authority & Execution Behavior</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
               <div className="p-4 bg-blue-50 border border-blue-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-2">Approval Authority</div>
                 <div className="text-slate-900 font-medium">Operations Manager</div>

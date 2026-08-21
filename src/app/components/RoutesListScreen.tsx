@@ -194,9 +194,9 @@ export function RoutesListScreen({ onRouteClick }: RoutesListScreenProps) {
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200">
-        <div className="px-6 py-4">
+        <div className="px-4 sm:px-6 py-4">
           {/* Top Row */}
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <div>
               <h1 className="text-slate-900 mb-1">Routes</h1>
               <p className="text-slate-600 text-sm">
@@ -205,7 +205,7 @@ export function RoutesListScreen({ onRouteClick }: RoutesListScreenProps) {
             </div>
 
             {/* Data Freshness */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-1.5 text-green-600">
                 <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
                 <span className="text-sm">Live data</span>
@@ -222,7 +222,7 @@ export function RoutesListScreen({ onRouteClick }: RoutesListScreenProps) {
           </div>
 
           {/* Context Row */}
-          <div className="flex items-center gap-6 text-sm text-slate-600">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span>Wednesday, Dec 31, 2025</span>
@@ -240,10 +240,10 @@ export function RoutesListScreen({ onRouteClick }: RoutesListScreenProps) {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto">
           {/* Status Summary Cards */}
-          <div className="grid grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <div className="bg-white border border-slate-200 rounded-lg p-4">
               <div className="text-slate-600 text-sm mb-1">Total Routes</div>
               <div className="text-slate-900 text-2xl">{statusCounts.total}</div>
@@ -264,7 +264,7 @@ export function RoutesListScreen({ onRouteClick }: RoutesListScreenProps) {
 
           {/* Filters and Search */}
           <div className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6 p-4">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               {/* Search */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />

@@ -354,8 +354,8 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
       <div className="flex-1">
         {/* Header */}
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-          <div className="px-6 py-4">
-            <div className="flex items-center justify-between mb-4">
+          <div className="px-4 sm:px-6 py-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <h1 className="text-slate-900">Deliveries/Stops</h1>
@@ -369,7 +369,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
               </div>
 
               {/* Context Indicators */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 <div className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-lg border border-slate-200">
                   <Calendar className="w-4 h-4 text-slate-600" />
                   <span className="text-slate-900 text-sm">Wed, Dec 31, 2025</span>
@@ -387,7 +387,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
             </div>
 
             {/* Stats Bar */}
-            <div className="grid grid-cols-5 gap-4 mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-4">
               <div className="px-4 py-2 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="text-xs text-slate-600 mb-1">Total Deliveries</div>
                 <div className="text-xl text-slate-900">{stats.total}</div>
@@ -411,7 +411,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
             </div>
 
             {/* Search and Filters */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               {/* Search */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -429,7 +429,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value as PriorityLevel | 'all')}
-                  className="appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
+                  className="w-full sm:w-auto appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
                 >
                   <option value="all">All Priorities</option>
                   <option value="vip">VIP Only</option>
@@ -445,7 +445,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value as ExecutionStatus | 'all')}
-                  className="appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
+                  className="w-full sm:w-auto appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="pending">Pending</option>
@@ -463,7 +463,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
                 <select
                   value={urgencyFilter}
                   onChange={(e) => setUrgencyFilter(e.target.value as SLAUrgency | 'all')}
-                  className="appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
+                  className="w-full sm:w-auto appearance-none pl-10 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white cursor-pointer"
                 >
                   <option value="all">All Urgency</option>
                   <option value="critical">Critical</option>
@@ -479,7 +479,7 @@ export function DeliveriesListScreen({ onSelectDelivery }: DeliveriesListScreenP
         </header>
 
         {/* Deliveries Table */}
-        <main className="px-6 py-6">
+        <main className="px-4 sm:px-6 py-6">
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">

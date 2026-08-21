@@ -219,7 +219,7 @@ export function OperationsAudit() {
       {/* Header */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
         <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <h1 className="text-slate-900 font-medium">Audit & Compliance</h1>
@@ -232,7 +232,7 @@ export function OperationsAudit() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-lg border border-slate-300">
+            <div className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-lg border border-slate-300 self-start sm:self-auto">
               <Lock className="w-4 h-4 text-slate-700" />
               <span className="text-sm text-slate-700 font-medium">Records cannot be modified</span>
             </div>
@@ -246,7 +246,7 @@ export function OperationsAudit() {
           
           {/* STEP 2 — LEDGER CONTEXT */}
           <div className="bg-white rounded-lg border border-slate-300 shadow-sm p-5">
-            <div className="grid grid-cols-4 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-2 mb-1">
                   <Calendar className="w-4 h-4 text-slate-600" />
@@ -281,7 +281,7 @@ export function OperationsAudit() {
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2">
                 <Filter className="w-4 h-4 text-slate-600" />
                 <span className="text-sm text-slate-700 font-medium">Scope:</span>
@@ -448,7 +448,7 @@ export function OperationsAudit() {
               {/* Decision Metadata */}
               <div>
                 <h3 className="text-sm text-slate-900 font-medium mb-3 uppercase text-xs">Decision Metadata</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="text-xs text-slate-600 mb-1">System Timestamp</div>
                     <div className="text-sm text-slate-900 font-mono">{selectedRecord.systemTime}</div>
@@ -482,7 +482,7 @@ export function OperationsAudit() {
               {/* Policy Context */}
               <div>
                 <h3 className="text-sm text-slate-900 font-medium mb-3 uppercase text-xs">Policy Thresholds vs Actuals</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="text-xs text-slate-600 mb-1">Policy Name</div>
                     <div className="text-sm text-slate-900">{selectedRecord.policyName}</div>
@@ -506,7 +506,7 @@ export function OperationsAudit() {
               {/* Approval Context */}
               <div>
                 <h3 className="text-sm text-slate-900 font-medium mb-3 uppercase text-xs">Approval Requirement & Status</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="text-xs text-slate-600 mb-1">Approval Required</div>
                     <div className="text-sm text-slate-900">{selectedRecord.approvalRequired ? 'Yes' : 'No'}</div>
@@ -529,7 +529,7 @@ export function OperationsAudit() {
               {/* STEP 6 — COMPLIANCE ASSERTIONS */}
               <div>
                 <h3 className="text-sm text-slate-900 font-medium mb-3 uppercase text-xs">Compliance Assertions</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="text-xs text-slate-600 mb-1">SLA Exposure</div>
                     <div className="text-sm text-slate-900">{selectedRecord.slaExposure}</div>
@@ -545,7 +545,7 @@ export function OperationsAudit() {
               {(selectedRecord.executionRef || selectedRecord.outcomeRef) && (
                 <div>
                   <h3 className="text-sm text-slate-900 font-medium mb-3 uppercase text-xs">Execution & Outcome References</h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {selectedRecord.executionRef && (
                       <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                         <div className="text-xs text-slate-600 mb-1">Execution Reference</div>

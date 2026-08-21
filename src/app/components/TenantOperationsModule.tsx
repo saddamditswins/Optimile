@@ -71,7 +71,7 @@ export function TenantOperationsModule() {
 
           {/* Filters */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-4">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <button className="flex items-center gap-2 px-4 py-2 border border-border hover:bg-accent rounded-lg transition-colors">
                 <Calendar className="w-5 h-5" />
                 <span>Last 30 Days</span>
@@ -104,7 +104,7 @@ export function TenantOperationsModule() {
                   </div>
                   <p className="text-2xl text-foreground">47</p>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-green-900">Approved</p>
                     <p className="text-2xl text-green-900 mt-1">34</p>

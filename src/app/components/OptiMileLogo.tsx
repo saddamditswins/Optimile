@@ -1,8 +1,8 @@
-export function OptiMileLogo({ size = 'default' }: { size?: 'default' | 'large' }) {
-  const dimensions = size === 'large' ? 'w-16 h-16' : 'w-12 h-12';
-  
+export function OptiMileLogo({ size = 'default' }: { size?: 'default' | 'large' | 'sm' }) {
+  const dimensions = size === 'large' ? 'w-16 h-16' : size === 'sm' ? 'w-8 h-8' : 'w-9 h-9 sm:w-12 sm:h-12';
+
   return (
-    <div className="flex items-center gap-4">
+    <div className={`flex items-center ${size === 'sm' ? 'gap-2' : 'gap-3 sm:gap-4'}`}>
       {/* Logo Icon - Delivery truck with route marker */}
       <div className={`${dimensions} relative flex-shrink-0`}>
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,13 +48,15 @@ export function OptiMileLogo({ size = 'default' }: { size?: 'default' | 'large' 
       </div>
       
       {/* Logo Text */}
-      <div>
-        <h1 className={`${size === 'large' ? 'text-4xl' : 'text-2xl'} font-bold text-gray-900 dark:text-gray-100 tracking-tight`}>
+      <div className="min-w-0">
+        <h1 className={`${size === 'large' ? 'text-3xl sm:text-4xl' : size === 'sm' ? 'text-lg' : 'text-xl sm:text-2xl'} font-bold text-gray-900 dark:text-gray-100 tracking-tight whitespace-nowrap`}>
           OptiMile
         </h1>
-        <p className={`${size === 'large' ? 'text-sm' : 'text-xs'} text-gray-500 dark:text-gray-400 font-medium tracking-wide`}>
-          Last-Mile Execution Control Platform
-        </p>
+        {size !== 'sm' && (
+          <p className={`hidden sm:block ${size === 'large' ? 'text-sm' : 'text-xs'} text-gray-500 dark:text-gray-400 font-medium tracking-wide`}>
+            Last-Mile Execution
+          </p>
+        )}
       </div>
     </div>
   );

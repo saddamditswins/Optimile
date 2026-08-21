@@ -98,8 +98,8 @@ export function EscalationRequest({
     <div className="min-h-screen bg-slate-50">
       {/* LAYER 0 — ENTRY CONTEXT (Neutral Orientation) */}
       <header className="bg-white border-b-2 border-slate-300 sticky top-0 z-10 shadow-sm">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onCancel}
@@ -121,7 +121,7 @@ export function EscalationRequest({
             </div>
 
             {/* Context Info */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="px-3 py-2 bg-slate-50 rounded-lg border border-slate-200">
                 <div className="text-xs text-slate-600 mb-1">Recovery ID</div>
                 <div className="text-slate-900 font-mono text-sm">{escalationData.recoveryId}</div>
@@ -140,7 +140,7 @@ export function EscalationRequest({
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1400px] mx-auto space-y-6">
           
           {/* LAYER 1 — GOVERNANCE VERDICT (Why Approval is Required) */}
@@ -157,7 +157,7 @@ export function EscalationRequest({
                 <div className="text-xs text-slate-600">{escalationData.governance.policyVersion}</div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div className="p-3 bg-white border border-slate-200 rounded">
                   <div className="text-xs text-slate-600 mb-1">{escalationData.governance.thresholdName}</div>
                   <div className="text-sm text-slate-900">{escalationData.governance.thresholdValue}</div>
@@ -179,7 +179,7 @@ export function EscalationRequest({
 
           {/* LAYER 2 — REQUESTED ACTION (What is Being Approved) */}
           <div className="bg-white rounded-lg border-2 border-slate-300 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex flex-wrap items-center justify-between gap-y-2 mb-5">
               <div className="flex items-center gap-2">
                 <FileText className="w-5 h-5 text-slate-700" />
                 <h2 className="text-slate-900">Requested Actions</h2>
@@ -208,7 +208,7 @@ export function EscalationRequest({
             </div>
 
             {/* Impact Scope Summary */}
-            <div className="mt-4 grid grid-cols-3 gap-3">
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="p-3 bg-blue-50 border border-blue-200 rounded">
                 <div className="flex items-center gap-2 mb-2">
                   <Route className="w-3 h-3 text-blue-700" />
@@ -243,7 +243,7 @@ export function EscalationRequest({
               <h2 className="text-slate-900">Business Impact Analysis</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Benefits */}
               <div>
                 <h3 className="text-xs text-slate-600 font-medium mb-3 uppercase">If Approved</h3>
@@ -288,7 +288,7 @@ export function EscalationRequest({
               <h2 className="text-slate-900">Approval Authority & Execution Control</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 bg-blue-50 border border-blue-300 rounded-lg">
                 <div className="text-xs text-slate-600 mb-2">Approval Required From</div>
                 <div className="text-slate-900 font-medium">{escalationData.executionStatus.approverRole}</div>
@@ -350,7 +350,7 @@ export function EscalationRequest({
                 placeholder="Provide clear context for the Operations Manager to make an informed approval decision. Explain the situation, urgency, business impact, and why this exception is warranted..."
                 className="w-full h-40 p-4 border-2 border-slate-300 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
-              <div className="flex items-center justify-between mt-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 mt-2">
                 <span className="text-xs text-slate-600">
                   This justification will be reviewed by {escalationData.governance.requiresApprovalFrom} and permanently recorded.
                 </span>
@@ -376,25 +376,25 @@ export function EscalationRequest({
 
       {/* LAYER 6 — SUBMISSION GATE (Formal Handoff) */}
       <footer className="sticky bottom-0 bg-white border-t-2 border-slate-300 shadow-lg">
-        <div className="px-6 py-5">
+        <div className="px-4 sm:px-6 py-5">
           <div className="max-w-[1400px] mx-auto">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="flex items-center gap-4">
                 <Shield className="w-6 h-6 text-slate-700" />
                 <div>
                   <div className="text-sm text-slate-900 font-medium">Formal Governance Handoff</div>
                   <div className="text-xs text-slate-600">
-                    {canSubmit 
-                      ? 'Ready to submit for approval' 
+                    {canSubmit
+                      ? 'Ready to submit for approval'
                       : 'Complete justification (minimum 30 characters) to proceed'}
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <button
                   onClick={onCancel}
-                  className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
                 >
                   <XCircle className="w-4 h-4" />
                   <span>Cancel & Return to Draft</span>
@@ -403,7 +403,7 @@ export function EscalationRequest({
                 <button
                   onClick={handleSubmit}
                   disabled={!canSubmit}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-lg transition-all ${
+                  className={`flex items-center justify-center gap-3 px-8 py-4 rounded-lg transition-all ${
                     canSubmit
                       ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg border-2 border-blue-700 cursor-pointer'
                       : 'bg-slate-200 text-slate-400 cursor-not-allowed border-2 border-slate-300'

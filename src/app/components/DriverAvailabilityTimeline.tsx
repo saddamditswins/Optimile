@@ -173,8 +173,8 @@ export function DriverAvailabilityTimeline({ driverId, onBack }: DriverAvailabil
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -206,7 +206,7 @@ export function DriverAvailabilityTimeline({ driverId, onBack }: DriverAvailabil
           </div>
 
           {/* Context Bar */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-slate-600" />
               <span className="text-slate-600">Shift: {driverData.shiftStart} - {driverData.shiftEnd}</span>
@@ -224,12 +224,12 @@ export function DriverAvailabilityTimeline({ driverId, onBack }: DriverAvailabil
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-6">
+      <main className="px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto space-y-6">
           {/* Timeline Legend */}
           <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-6">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-4 h-4 bg-slate-300 rounded border border-slate-400" />
                   <span className="text-slate-600">Completed</span>
@@ -395,7 +395,7 @@ export function DriverAvailabilityTimeline({ driverId, onBack }: DriverAvailabil
           </div>
 
           {/* Context Notes */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <div className="flex items-start gap-3">
                 <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -450,7 +450,7 @@ export function DriverAvailabilityTimeline({ driverId, onBack }: DriverAvailabil
           </div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-4">
               <div className="flex items-center gap-3 mb-2">
                 <div className="p-2 bg-blue-100 rounded">

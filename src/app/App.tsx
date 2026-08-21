@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Menu } from 'lucide-react';
 import { ThemeProvider } from './components/ThemeProvider';
+import { OptiMileLogo } from './components/OptiMileLogo';
 import { Homepage } from './components/Homepage';
 import { RoleSelection } from './components/RoleSelection';
 import { LoginScreen } from './components/LoginScreen';
@@ -78,6 +80,21 @@ export default function App() {
   );
 }
 
+function MobileTopBar({ onMenuClick }: { onMenuClick: () => void }) {
+  return (
+    <div className="lg:hidden flex items-center gap-3 px-4 py-3 border-b border-border bg-card shrink-0">
+      <button
+        onClick={onMenuClick}
+        className="p-2 -ml-2 rounded-lg text-foreground hover:bg-accent transition-colors"
+        aria-label="Open navigation menu"
+      >
+        <Menu className="w-5 h-5" />
+      </button>
+      <OptiMileLogo size="sm" />
+    </div>
+  );
+}
+
 function AppContent() {
   // State management
   const [currentScreen, setCurrentScreen] = useState<string>('home');
@@ -92,6 +109,7 @@ function AppContent() {
   const [selectedRecoveryId, setSelectedRecoveryId] = useState<string | null>(null);
   const [selectedExecutionId, setSelectedExecutionId] = useState<string | null>(null);
   const [selectedEscalationId, setSelectedEscalationId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleGetStarted = () => {
     setCurrentScreen('role-selection');
@@ -148,6 +166,7 @@ function AppContent() {
 
   const handleNavigate = (screen: string) => {
     setCurrentScreen(screen as Screen);
+    setSidebarOpen(false);
   };
 
   const handleRouteClick = (routeId: string) => {
@@ -276,11 +295,15 @@ function AppContent() {
   if (selectedRole === 'dispatch-manager' && ['dashboard', 'risk-focus', 'routes', 'route-detail', 'route-map', 'drivers', 'driver-detail', 'driver-timeline', 'driver-impact', 'deliveries', 'delivery-detail', 'vip-deliveries', 'vip-delivery-detail', 'alerts', 'alert-detail', 'alert-history', 'recovery-entry', 'recovery-builder', 'impact-review', 'commit-review', 'post-commit', 'escalation-request', 'escalation-status', 'execution-monitor', 'execution-detail', 'execution-outcome'].includes(currentScreen)) {
     return (
       <div className="flex h-screen overflow-hidden">
-        <NavigationSidebar 
+        <NavigationSidebar
           activeScreen={currentScreen === 'risk-focus' ? 'dashboard' : (currentScreen === 'route-detail' || currentScreen === 'route-map') ? 'routes' : (currentScreen === 'driver-detail' || currentScreen === 'driver-timeline' || currentScreen === 'driver-impact') ? 'drivers' : (currentScreen === 'delivery-detail') ? 'deliveries' : (currentScreen === 'vip-deliveries') ? 'vip-deliveries' : (currentScreen === 'alerts' || currentScreen === 'alert-detail' || currentScreen === 'alert-history') ? 'alerts' : (currentScreen === 'recovery-entry' || currentScreen === 'recovery-builder' || currentScreen === 'impact-review' || currentScreen === 'commit-review' || currentScreen === 'post-commit') ? 'recovery-entry' : (currentScreen === 'escalation-request' || currentScreen === 'escalation-status') ? 'escalation-request' : (currentScreen === 'execution-monitor' || currentScreen === 'execution-detail' || currentScreen === 'execution-outcome') ? 'execution-monitor' : currentScreen}
           onNavigate={handleNavigate}
           onLogout={handleLogout}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
+        <div className="flex-1 flex flex-col overflow-hidden">
+        <MobileTopBar onMenuClick={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-auto">
           {currentScreen === 'risk-focus' && (
             <RiskFocusView onBack={handleBackToDashboard} />
@@ -470,6 +493,7 @@ function AppContent() {
             />
           )}
         </div>
+        </div>
       </div>
     );
   }
@@ -477,11 +501,15 @@ function AppContent() {
   if (selectedRole === 'operations-manager' && ['ops-dashboard', 'ops-escalations', 'ops-escalation-review', 'ops-sla-risk', 'ops-execution', 'ops-outcomes', 'ops-audit'].includes(currentScreen)) {
     return (
       <div className="flex h-screen overflow-hidden">
-        <OperationsManagerSidebar 
+        <OperationsManagerSidebar
           activeScreen={currentScreen}
           onNavigate={handleNavigate}
           onLogout={handleLogout}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
+        <div className="flex-1 flex flex-col overflow-hidden">
+        <MobileTopBar onMenuClick={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-auto">
           {currentScreen === 'ops-dashboard' && (
             <OperationsManagerDashboard 
@@ -528,6 +556,7 @@ function AppContent() {
             <OperationsAudit />
           )}
         </div>
+        </div>
       </div>
     );
   }
@@ -535,11 +564,15 @@ function AppContent() {
   if (selectedRole === 'fleet-supervisor' && ['fleet-dashboard', 'fleet-drivers', 'fleet-vehicles', 'fleet-capacity', 'fleet-exceptions', 'fleet-activity'].includes(currentScreen)) {
     return (
       <div className="flex h-screen overflow-hidden">
-        <FleetSupervisorSidebar 
+        <FleetSupervisorSidebar
           activeScreen={currentScreen}
           onNavigate={handleNavigate}
           onLogout={handleLogout}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
+        <div className="flex-1 flex flex-col overflow-hidden">
+        <MobileTopBar onMenuClick={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-auto">
           {currentScreen === 'fleet-dashboard' && (
             <FleetSupervisorDashboard onNavigate={handleNavigate} />
@@ -560,6 +593,7 @@ function AppContent() {
             <FleetActivityLog />
           )}
         </div>
+        </div>
       </div>
     );
   }
@@ -570,12 +604,16 @@ function AppContent() {
 
     return (
       <div className="flex h-screen overflow-hidden">
-        <TenantAdminSidebar 
+        <TenantAdminSidebar
           activeScreen={currentScreen}
           onNavigate={handleNavigate}
           onLogout={handleLogout}
           workspaceReady={workspaceReady}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
+        <div className="flex-1 flex flex-col overflow-hidden">
+        <MobileTopBar onMenuClick={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-auto">
           {!workspaceReady && currentScreen === 'tenant-first-login' && (
             <TenantAdminFirstLogin 
@@ -610,6 +648,7 @@ function AppContent() {
             <TenantSupportModule />
           )}
         </div>
+        </div>
       </div>
     );
   }
@@ -617,11 +656,15 @@ function AppContent() {
   if (selectedRole === 'super-admin' && ['superadmin-dashboard', 'superadmin-tenants', 'superadmin-subscriptions', 'superadmin-support', 'superadmin-settings'].includes(currentScreen)) {
     return (
       <div className="flex h-screen overflow-hidden">
-        <SuperAdminSidebar 
+        <SuperAdminSidebar
           activeScreen={currentScreen}
           onNavigate={handleNavigate}
           onLogout={handleLogout}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
+        <div className="flex-1 flex flex-col overflow-hidden">
+        <MobileTopBar onMenuClick={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-auto">
           {currentScreen === 'superadmin-dashboard' && (
             <SuperAdminDashboard />
@@ -639,6 +682,7 @@ function AppContent() {
             <SuperAdminSettings />
           )}
         </div>
+        </div>
       </div>
     );
   }
@@ -646,32 +690,46 @@ function AppContent() {
   // Driver Mobile App (no sidebar, mobile-first)
   if (selectedRole === 'driver' && currentScreen === 'driver-mobile') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-4">
-        {/* Mobile Phone Frame */}
-        <div className="relative w-full max-w-md">
-          {/* Phone Bezel */}
-          <div className="bg-gray-900 rounded-[3rem] p-3 shadow-2xl">
-            {/* Phone Screen */}
-            <div className="bg-white rounded-[2.5rem] overflow-hidden relative">
-              {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-50"></div>
-              
-              {/* Screen Content */}
-              <div className="relative h-[812px] overflow-hidden">
-                <DriverMobileApp />
-              </div>
-            </div>
-          </div>
-          
-          {/* Logout Button (Outside Phone) */}
+      <>
+        {/* Real mobile viewports: render the app full-screen, no decorative frame */}
+        <div className="lg:hidden min-h-screen bg-white relative">
+          <DriverMobileApp />
           <button
             onClick={handleLogout}
-            className="absolute -bottom-16 left-1/2 -translate-x-1/2 bg-white text-gray-700 px-6 py-3 rounded-xl shadow-lg hover:bg-gray-50 transition-colors font-medium"
+            className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-white text-gray-700 px-5 py-2.5 rounded-xl shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors font-medium text-sm"
           >
             Exit Demo
           </button>
         </div>
-      </div>
+
+        {/* Desktop: show the phone-bezel mockup */}
+        <div className="hidden lg:flex min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 items-center justify-center p-4">
+          {/* Mobile Phone Frame */}
+          <div className="relative w-full max-w-md">
+            {/* Phone Bezel */}
+            <div className="bg-gray-900 rounded-[3rem] p-3 shadow-2xl">
+              {/* Phone Screen */}
+              <div className="bg-white rounded-[2.5rem] overflow-hidden relative">
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-50"></div>
+
+                {/* Screen Content */}
+                <div className="relative h-[812px] overflow-hidden">
+                  <DriverMobileApp />
+                </div>
+              </div>
+            </div>
+
+            {/* Logout Button (Outside Phone) */}
+            <button
+              onClick={handleLogout}
+              className="absolute -bottom-16 left-1/2 -translate-x-1/2 bg-white text-gray-700 px-6 py-3 rounded-xl shadow-lg hover:bg-gray-50 transition-colors font-medium"
+            >
+              Exit Demo
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 

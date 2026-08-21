@@ -77,7 +77,7 @@ export function DriverReliabilityPanel({ signals }: DriverReliabilityPanelProps)
   return (
     <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6">
       {/* Header with Advisory Notice */}
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex flex-wrap items-start justify-between gap-y-2 mb-4">
         <div>
           <h2 className="text-slate-900 mb-1">Reliability Signals</h2>
           <p className="text-slate-600 text-sm">Advisory indicators - not judgmental assessment</p>
@@ -88,7 +88,7 @@ export function DriverReliabilityPanel({ signals }: DriverReliabilityPanelProps)
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Acknowledgment Latency */}
         <div className={`p-4 rounded-lg border ${acknowledgmentConfig.color}`}>
           <div className="flex items-center gap-2 mb-2">

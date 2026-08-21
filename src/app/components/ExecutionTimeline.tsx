@@ -22,15 +22,15 @@ export function ExecutionTimeline({ completedStops, totalStops, delayMinutes }: 
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-sm">
-      <div className="border-b border-slate-200 px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="border-b border-slate-200 px-4 sm:px-6 py-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h3 className="text-slate-900">Execution Timeline</h3>
             <p className="text-slate-600 text-sm mt-0.5">
               Planned vs actual route progression
             </p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full" />
               <span className="text-slate-600 text-sm">On Track</span>
@@ -47,7 +47,7 @@ export function ExecutionTimeline({ completedStops, totalStops, delayMinutes }: 
         </div>
       </div>
 
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
@@ -111,7 +111,7 @@ export function ExecutionTimeline({ completedStops, totalStops, delayMinutes }: 
 
                 {/* Content */}
                 <div className={`pb-6 ${event.type === 'current' ? 'border-l-2 border-blue-500 pl-4 -ml-1' : ''}`}>
-                  <div className="flex items-start justify-between mb-1">
+                  <div className="flex flex-wrap items-start justify-between gap-y-1 mb-1">
                     <div>
                       <div className="flex items-center gap-2">
                         <span className={`text-sm ${

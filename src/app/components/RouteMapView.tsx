@@ -41,9 +41,9 @@ export function RouteMapView({ routeId, onBack, onStopClick }: RouteMapViewProps
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-20">
-        <div className="px-6 py-4">
+        <div className="px-4 sm:px-6 py-4">
           {/* Top Row */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -79,7 +79,7 @@ export function RouteMapView({ routeId, onBack, onStopClick }: RouteMapViewProps
           </div>
 
           {/* Context Indicators */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-slate-600" />
               <span className="text-slate-600">Current Time: {routeData.currentTime}</span>
@@ -103,9 +103,9 @@ export function RouteMapView({ routeId, onBack, onStopClick }: RouteMapViewProps
       </header>
 
       {/* Main Content */}
-      <main className="flex h-[calc(100vh-120px)]">
+      <main className="flex flex-col lg:flex-row lg:h-[calc(100vh-120px)]">
         {/* Map Canvas */}
-        <div className="flex-1 relative">
+        <div className="h-[50vh] lg:h-auto lg:flex-1 relative">
           <MapCanvas 
             routeId={routeId}
             onStopHover={setHoveredStop}

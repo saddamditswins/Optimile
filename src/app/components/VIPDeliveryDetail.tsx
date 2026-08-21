@@ -70,7 +70,7 @@ export function VIPDeliveryDetail({ deliveryId, onBack }: VIPDeliveryDetailProps
     <div className="flex flex-col h-screen bg-background">
       {/* Header */}
       <div className="border-b bg-card">
-        <div className="px-8 py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={onBack}
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground mb-4 transition-colors"
@@ -90,7 +90,7 @@ export function VIPDeliveryDetail({ deliveryId, onBack }: VIPDeliveryDetailProps
 
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="px-8 py-6 max-w-5xl">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-5xl">
           
           {/* LAYER 1: DECISION (PRIMARY) */}
           <div className="mb-8">
@@ -181,7 +181,7 @@ export function VIPDeliveryDetail({ deliveryId, onBack }: VIPDeliveryDetailProps
               {/* Execution Snapshot */}
               <div className="p-5">
                 <div className="text-sm text-muted-foreground mb-3">Execution Snapshot</div>
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div>
                     <div className="text-xs text-muted-foreground mb-1">Planned ETA</div>
                     <div className="text-foreground font-medium">{delivery.plannedETA}</div>
@@ -200,7 +200,7 @@ export function VIPDeliveryDetail({ deliveryId, onBack }: VIPDeliveryDetailProps
               {/* Route & Driver Summary */}
               <div className="p-5">
                 <div className="text-sm text-muted-foreground mb-3">Route & Driver Summary</div>
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div>
                     <div className="text-xs text-muted-foreground mb-1">Route ID</div>
                     <div className="flex items-center gap-2">
@@ -320,12 +320,12 @@ export function VIPDeliveryDetail({ deliveryId, onBack }: VIPDeliveryDetailProps
 
       {/* FIXED ACTION AREA */}
       <div className="border-t bg-card">
-        <div className="px-8 py-4">
-          <div className="flex items-center justify-between max-w-5xl">
+        <div className="px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 max-w-5xl">
             <div className="text-sm text-muted-foreground">
               Decision required for VIP delivery
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={() => console.log('Accept delay & notify')}
                 className="px-6 py-2.5 border border-slate-300 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"

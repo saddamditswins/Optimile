@@ -145,9 +145,9 @@ export function RiskFocusView({ onBack }: RiskFocusViewProps) {
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Global Context Header */}
       <header className="bg-white border-b border-slate-200">
-        <div className="px-6 py-4">
+        <div className="px-4 sm:px-6 py-4">
           {/* Top Row */}
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <div className="flex items-center gap-4">
               <button
                 onClick={onBack}
@@ -162,7 +162,7 @@ export function RiskFocusView({ onBack }: RiskFocusViewProps) {
             </div>
 
             {/* Data Freshness */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-1.5 text-green-600">
                 <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
                 <span className="text-sm">Live</span>
@@ -179,7 +179,7 @@ export function RiskFocusView({ onBack }: RiskFocusViewProps) {
           </div>
 
           {/* Context Row */}
-          <div className="flex items-center gap-6 text-sm text-slate-600">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span>Wednesday, Dec 31, 2025</span>
@@ -197,7 +197,7 @@ export function RiskFocusView({ onBack }: RiskFocusViewProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 px-6 py-6">
+      <main className="flex-1 px-4 sm:px-6 py-6">
         <div className="max-w-[1600px] mx-auto">
           {/* Page Title */}
           <div className="mb-6">
@@ -224,7 +224,7 @@ export function RiskFocusView({ onBack }: RiskFocusViewProps) {
               {/* High-Risk Entities List */}
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm">
                 <div className="border-b border-slate-200 px-6 py-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
                       <h3 className="text-slate-900">High-Risk Entities</h3>
                       <p className="text-slate-600 text-sm mt-0.5">

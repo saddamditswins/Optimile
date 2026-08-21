@@ -13,13 +13,13 @@ export function TenantPrivacyModule() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-card border-b border-border px-6 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-card border-b border-border px-4 sm:px-6 py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h1 className="text-foreground">Data & Privacy</h1>
             <p className="text-muted-foreground text-sm">Manage data governance, retention, and privacy controls</p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm">
+          <button className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg transition-all duration-200 shadow-sm self-start sm:self-auto">
             <FileCheck className="w-5 h-5" />
             <span>Generate Compliance Report</span>
           </button>
@@ -74,9 +74,9 @@ export function TenantPrivacyModule() {
 
           {/* Data Categories & Classification */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
               <h2 className="text-foreground">Data Categories & Classification</h2>
-              <button className="text-primary hover:text-blue-700 text-sm">Edit Classification</button>
+              <button className="text-primary hover:text-blue-700 text-sm self-start sm:self-auto">Edit Classification</button>
             </div>
             
             <div className="overflow-x-auto">
@@ -123,9 +123,9 @@ export function TenantPrivacyModule() {
 
           {/* Retention Policies */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
               <h2 className="text-foreground">Retention Policy Configuration</h2>
-              <button className="px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg text-sm transition-colors">
+              <button className="px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg text-sm transition-colors self-start sm:self-auto">
                 Add Policy
               </button>
             </div>
@@ -137,7 +137,7 @@ export function TenantPrivacyModule() {
                 { category: 'User Activity', duration: '2 years', trigger: 'Event Timestamp', status: 'Active', tier: 'Hot' },
                 { category: 'Audit Logs', duration: '5 years', trigger: 'Event Timestamp', status: 'Active', tier: 'Cold' }
               ].map((policy, index) => (
-                <div key={index} className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent transition-colors">
+                <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 border border-border rounded-lg hover:bg-accent transition-colors">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <h3 className="text-foreground">{policy.category}</h3>
@@ -145,13 +145,13 @@ export function TenantPrivacyModule() {
                         {policy.status}
                       </span>
                     </div>
-                    <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-muted-foreground">
                       <span>Duration: {policy.duration}</span>
                       <span>Trigger: {policy.trigger}</span>
                       <span>Storage: {policy.tier}</span>
                     </div>
                   </div>
-                  <button className="text-primary hover:text-blue-700 text-sm">Edit Policy</button>
+                  <button className="text-primary hover:text-blue-700 text-sm self-start sm:self-auto">Edit Policy</button>
                 </div>
               ))}
             </div>
@@ -159,9 +159,9 @@ export function TenantPrivacyModule() {
 
           {/* Anonymization Rules */}
           <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
               <h2 className="text-foreground">Anonymization & De-identification Rules</h2>
-              <button className="px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg text-sm transition-colors">
+              <button className="px-4 py-2 bg-primary hover:bg-blue-700 text-primary-foreground rounded-lg text-sm transition-colors self-start sm:self-auto">
                 Add Rule
               </button>
             </div>
@@ -174,7 +174,7 @@ export function TenantPrivacyModule() {
                 { category: 'Orders', field: 'GPS Coordinates', method: 'Deletion', trigger: 'After 1 year', reversible: 'No' }
               ].map((rule, index) => (
                 <div key={index} className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent transition-colors">
-                  <div className="flex-1 grid grid-cols-5 gap-4">
+                  <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                     <div>
                       <p className="text-foreground text-sm">{rule.category}</p>
                       <p className="text-muted-foreground text-xs">{rule.field}</p>
