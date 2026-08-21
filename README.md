@@ -1,6 +1,5 @@
 # OptiMile
 
-**Live demo:** [https://optimile-ten.vercel.app](https://optimile-ten.vercel.app)
 
 OptiMile is a last-mile delivery execution control platform. It brings dispatch, fleet, and operations teams onto one system so that risk gets surfaced the moment it emerges, recovery decisions are made with full context, and every stakeholder — from a platform admin to a driver on the road — stays in sync until a delivery is done.
 
